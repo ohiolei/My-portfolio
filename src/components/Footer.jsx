@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { soundManager } from '../utils/audio';
 
-export default function Footer({ personal, onNavigate, onOpenJsonModal }) {
+export default function Footer({ personal, onNavigate }) {
   const [timeStr, setTimeStr] = useState('');
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function Footer({ personal, onNavigate, onOpenJsonModal }) {
       const now = new Date();
       setTimeStr(
         now.toLocaleTimeString('en-US', {
-          timeZone: 'America/Los_Angeles',
+          timeZone: 'Africa/Lagos',
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit'
@@ -51,17 +51,17 @@ export default function Footer({ personal, onNavigate, onOpenJsonModal }) {
               <span className="footer-heading font-mono">INSIGHT</span>
               <button onClick={() => onNavigate('experience')} className="footer-link">Timeline</button>
               <button onClick={() => onNavigate('about')} className="footer-link">Story & Vibe</button>
-              <button onClick={() => onNavigate('contact')} className="footer-link">Establish Uplink</button>
+              <button onClick={() => onNavigate('contact')} className="footer-link">Connect</button>
             </div>
 
             <div className="footer-col">
-              <span className="footer-heading font-mono">SYSTEM</span>
-              <button onClick={onOpenJsonModal} className="footer-link font-mono">
-                Inspect Data.JSON ↗
-              </button>
+              <span className="footer-heading font-mono">LOCATION</span>
+              <div className="footer-location-text font-mono">
+                {personal.location}
+              </div>
               <div className="footer-time-badge font-mono">
                 <span className="live-beacon" />
-                <span>SF TIME: {timeStr || '12:00:00 PM'} (PST)</span>
+                <span>WAT: {timeStr || '12:00:00 PM'}</span>
               </div>
             </div>
           </div>
@@ -69,11 +69,7 @@ export default function Footer({ personal, onNavigate, onOpenJsonModal }) {
 
         <div className="footer-bottom-bar">
           <div className="footer-copy font-mono">
-            © {new Date().getFullYear()} {personal.name}. Built with React 19, Vanilla CSS & Web Audio. Data driven by{' '}
-            <button className="inline-json-link" onClick={onOpenJsonModal}>
-              portfolioData.json
-            </button>
-            .
+            © {new Date().getFullYear()} {personal.name}. All rights reserved. Software Engineer & Full-Stack Developer.
           </div>
 
           <button

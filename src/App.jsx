@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import AmbientCanvas from './components/AmbientCanvas';
 import CustomCursor from './components/CustomCursor';
 import ProjectModal from './components/ProjectModal';
-import JsonDataModal from './components/JsonDataModal';
 
 // Pages
 import HomeView from './pages/HomeView';
@@ -29,7 +28,6 @@ function getInitialPage() {
 function App() {
   const [activePage, setActivePage] = useState(getInitialPage);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isJsonModalOpen, setIsJsonModalOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('cyber');
 
   // Sync hash routing and browser back/forward buttons
@@ -73,7 +71,6 @@ function App() {
         activePage={activePage}
         setActivePage={navigateTo}
         navLinks={portfolioData.navigation}
-        onOpenJsonModal={() => setIsJsonModalOpen(true)}
         currentTheme={currentTheme}
         setTheme={setCurrentTheme}
       />
@@ -129,7 +126,6 @@ function App() {
       <Footer
         personal={portfolioData.personal}
         onNavigate={navigateTo}
-        onOpenJsonModal={() => setIsJsonModalOpen(true)}
       />
 
       {/* Interactive Project Case Study Modal */}
@@ -138,11 +134,6 @@ function App() {
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
-      )}
-
-      {/* Raw JSON Data Viewer Modal */}
-      {isJsonModalOpen && (
-        <JsonDataModal onClose={() => setIsJsonModalOpen(false)} />
       )}
     </>
   );

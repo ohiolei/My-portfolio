@@ -1,63 +1,64 @@
 {
   "personal": {
-    "name": "Oluwatobiloba Williams",
-    "nickname": "tobiloba.sys",
-    "title": "Senior Full-Stack Engineer & Systems Architect",
-    "tagline": "Architecting high-availability institutional portals, secure e-governance systems, and fluid modern web applications.",
-    "availabilityStatus": "Available for select high-impact engineering contracts & lead roles",
-    "location": "Lagos & Global Remote",
-    "email": "oluwatobiloba.williams.dev@gmail.com",
-    "phone": "+234 (0) 812-456-7890",
-    "yearsOfExperience": 7,
+    "name": "Oluwatobiloba Ohiole Williams",
+    "nickname": "ohiolei.sys",
+    "title": "Software Engineer | Full-Stack Developer | Technical Writer",
+    "tagline": "Building scalable web applications, university ICT systems, and automated instant payment platforms with Laravel, Vue.js, and modern cloud architecture.",
+    "availabilityStatus": "System Programmer at TASUED ICT • Open to Relocation (Canada & Global)",
+    "location": "Ogun State, Nigeria (Open to Relocation)",
+    "email": "willnagato@outlook.com",
+    "phone": "+2348060179143",
+    "yearsOfExperience": 5,
     "avatarKey": "avatar",
-    "bioSummary": "A seasoned full-stack engineer and web systems architect with a proven track record of engineering mission-critical university portals, secure e-voting networks, and high-conversion web applications.",
+    "bioSummary": "Results-driven Software Developer with 5+ years of experience in Laravel, Vue.js, MySQL, and modern web architectures. Skilled in building scalable web applications, university ICT systems, and user-friendly interfaces. Currently a System Programmer at Tai Solarin University of Education ICT, delivering solutions that improve efficiency for 20,000+ staff and students. Open to relocation and eager to contribute to Canada’s growing digital economy.",
     "bioParagraphs": [
-      "I specialize in engineering robust, high-traffic digital ecosystems from conceptual architecture to high-availability deployment. Over the years, I have architected and maintained flagship university portals, digital learning management systems (TASCE LMS), and student information gateways handling hundreds of thousands of active users and millions in transactions.",
-      "My engineering ethos merges scalable database schemas, high-throughput server runtimes, and resilient API gateways with modern, buttery 60fps user interfaces.",
-      "Whether developing multi-tier institutional administrative hubs, tamper-evident collegiate e-voting platforms, or cutting-edge AI assistant workflows (Wizard AI), I build for scale, security, and exceptional user experience."
+      "I am a results-driven Software Developer with 5+ years of hands-on experience in Laravel, Vue.js, MySQL, and modern frontend frameworks. Skilled in building scalable web applications, institutional university ICT systems, and high-volume financial solutions.",
+      "Currently serving as a System Programmer at Tai Solarin University of Education (TASUED) ICT, where I architect and maintain mission-critical systems serving over 20,000 students and staff, including student portals (V4 & V3), LMS platforms (LMS TASCE), and cryptographically secure collegiate e-voting infrastructure.",
+      "Previously at Autocredit Payments, I developed and maintained automated instant payment solutions processing approximately 10 billion NGN annually with high reliability, security, and low latency.",
+      "I am actively open to relocation and eager to contribute my full-stack engineering expertise to Canada’s growing digital economy and forward-thinking technology organizations worldwide."
     ],
     "socials": [
       {
         "id": "github",
         "name": "GitHub",
-        "url": "https://github.com/Jhon-crypt",
-        "handle": "@Jhon-crypt",
+        "url": "https://github.com/ohiolei",
+        "handle": "@ohiolei",
         "accent": "#00f0ff"
       },
       {
         "id": "linkedin",
         "name": "LinkedIn",
-        "url": "https://linkedin.com",
-        "handle": "in/oluwatobiloba-williams",
+        "url": "https://www.linkedin.com/in/williams-oluwatobiloba-65118016a/",
+        "handle": "in/williams-oluwatobiloba",
         "accent": "#0077b5"
       },
       {
-        "id": "twitter",
-        "name": "X / Twitter",
-        "url": "https://x.com",
-        "handle": "@tobiloba_dev",
+        "id": "portfolio",
+        "name": "Live Portfolio",
+        "url": "https://portfolio-puce-kappa-25.vercel.app/",
+        "handle": "portfolio.vercel.app",
         "accent": "#ff007f"
       },
       {
-        "id": "discord",
-        "name": "Discord",
-        "url": "https://discord.com",
-        "handle": "tobiloba#0001",
-        "accent": "#5865f2"
+        "id": "email",
+        "name": "Direct Outlook",
+        "url": "mailto:willnagato@outlook.com",
+        "handle": "willnagato@outlook.com",
+        "accent": "#10b981"
       }
     ]
   },
   "stats": [
-    { "label": "Years in Production", "value": "8+", "detail": "From seed startups to tier-1 tech" },
-    { "label": "Shipped Projects", "value": "42+", "detail": "Full-stack apps, AI nodes & SDKs" },
-    { "label": "GitHub Stars", "value": "14.8k", "detail": "Across open source web repositories" },
-    { "label": "Client CSAT", "value": "99.4%", "detail": "Consistent 5-star delivery track record" }
+    { "label": "Years in Production", "value": "5+", "detail": "Laravel, Vue.js & System Architecture" },
+    { "label": "Annual Payments Processed", "value": "10B+ NGN", "detail": "Automated instant payment gateways" },
+    { "label": "Students & Staff Served", "value": "20,000+", "detail": "Across TASUED university ICT platforms" },
+    { "label": "Paperwork Reduction", "value": "60%", "detail": "Through automated reservation & portals" }
   ],
   "currentVibe": {
-    "track": "Resonance — Spatial Synthesis Edit",
-    "artist": "HOME & Lorn",
-    "status": "Currently coding WebGPU particle physics engine",
-    "focus": "Generative UI Pipelines & Distributed State Machines"
+    "track": "Inertia.js + Laravel 11",
+    "artist": "Full-Stack Excellence",
+    "status": "Currently developing high-concurrency university ICT portals & APIs",
+    "focus": "Laravel, Vue.js, Cloudinary Optimization & AWS Infrastructure"
   },
   "navigation": [
     { "id": "home", "label": "Overview", "badge": "01", "hint": "Hero & Highlights" },
@@ -288,186 +289,181 @@
   "skills": {
     "categories": [
       {
-        "id": "frontend",
-        "title": "Frontend & Creative Engineering",
-        "description": "Crafting butter-smooth 60fps interactive surfaces and modular design systems.",
+        "id": "core",
+        "title": "Core Technologies & Full-Stack",
+        "description": "Building scalable web applications, SPAs, and robust enterprise APIs.",
         "skills": [
-          { "name": "React 19 & Next.js", "level": 98, "tag": "Primary" },
-          { "name": "TypeScript / Modern ES6+", "level": 96, "tag": "Expert" },
-          { "name": "Vanilla CSS & Modern Layouts", "level": 99, "tag": "Artisan" },
-          { "name": "Canvas 2D / WebGL / Three.js", "level": 88, "tag": "Spatial" },
-          { "name": "State Machines & Reactive Architecture", "level": 94, "tag": "System" },
-          { "name": "Performance Tuning & Web Vitals", "level": 95, "tag": "Audit" }
+          { "name": "PHP (Laravel 11)", "level": 98, "tag": "Core" },
+          { "name": "Vue.js & Inertia.js", "level": 96, "tag": "Frontend" },
+          { "name": "MySQL & Schema Optimization", "level": 95, "tag": "Database" },
+          { "name": "Tailwind CSS & Bootstrap", "level": 94, "tag": "Styling" },
+          { "name": "JavaScript (ES6+) & React", "level": 92, "tag": "Runtime" },
+          { "name": "RESTful APIs & Microservices", "level": 95, "tag": "Network" }
         ]
       },
       {
-        "id": "backend",
-        "title": "Backend & Cloud Infrastructure",
-        "description": "Building fault-tolerant microservices, streaming endpoints, and high-throughput pipelines.",
+        "id": "cloud",
+        "title": "Cloud, APIs & University ICT",
+        "description": "Deploying secure cloud applications, automated media pipelines, and institutional systems.",
         "skills": [
-          { "name": "Node.js / Express / Fastify", "level": 94, "tag": "Server" },
-          { "name": "Python / FastAPI / AsyncIO", "level": 91, "tag": "Backend" },
-          { "name": "PostgreSQL & Prisma ORM", "level": 92, "tag": "Database" },
-          { "name": "Redis & Caching Invalidation", "level": 90, "tag": "Memory" },
-          { "name": "WebSockets & Event-Driven Architecture", "level": 93, "tag": "Realtime" },
-          { "name": "Docker & Edge Workers (Cloudflare / AWS)", "level": 89, "tag": "DevOps" }
+          { "name": "Cloudinary API (40% Speed Lift)", "level": 96, "tag": "Media CDN" },
+          { "name": "AWS (SES, RDS Cloud)", "level": 90, "tag": "Cloud" },
+          { "name": "System Programming (TASUED ICT)", "level": 97, "tag": "Enterprise" },
+          { "name": "Git / GitHub Version Control", "level": 94, "tag": "DevOps" },
+          { "name": "Payment Gateway Integration", "level": 95, "tag": "Fintech" },
+          { "name": "WordPress Development", "level": 88, "tag": "CMS" }
         ]
       },
       {
-        "id": "aiCreative",
-        "title": "Generative AI & Emerging Media",
-        "description": "Deploying frontier neural pipelines, multi-agent frameworks, and sensory audio/visuals.",
+        "id": "professional",
+        "title": "Leadership & Specialized Strengths",
+        "description": "Technical writing, agile execution, and startup advisory.",
         "skills": [
-          { "name": "LLM Orchestration & Agent Loops", "level": 95, "tag": "Frontier" },
-          { "name": "Vector Databases & Semantic Search", "level": 90, "tag": "RAG" },
-          { "name": "Web Audio API & Interactive Synthesis", "level": 87, "tag": "Sensory" },
-          { "name": "Figma-to-Code & Design Tokens", "level": 96, "tag": "Design" },
-          { "name": "Prompt Engineering & Evaluation Suites", "level": 92, "tag": "Evals" },
-          { "name": "Smart Contracts & WebAuthn Security", "level": 85, "tag": "Web3" }
+          { "name": "Technical Documentation & Writing", "level": 96, "tag": "Author" },
+          { "name": "Agile / Scrum Sprint Leadership", "level": 93, "tag": "Agile" },
+          { "name": "Mentoring & Team Coaching", "level": 91, "tag": "Growth" },
+          { "name": "Web Accessibility & Performance", "level": 92, "tag": "WCAG" },
+          { "name": "Startup Competition Judge (Hult Prize)", "level": 94, "tag": "Leadership" },
+          { "name": "Bilingual: English & Yoruba (Fluent)", "level": 100, "tag": "Language" }
         ]
       }
     ]
   },
   "services": [
     {
-      "id": "creative-dev",
-      "title": "Creative Design Engineering",
-      "subtitle": "01 / Visual & Motion Craft",
-      "description": "Bespoke web experiences that mesmerize visitors with silky animations, bespoke interactions, 3D elements, and flawless responsive execution.",
-      "deliverables": ["Interactive Websites & Microsites", "Design System Engineering", "Custom Shader / Canvas Graphics", "Performance & SEO Maximization"]
+      "id": "ict-portals",
+      "title": "University ICT & Enterprise Portals",
+      "subtitle": "01 / Scalable Architecture",
+      "description": "Architecting high-availability institutional portals that serve 20,000+ students and staff with zero downtime during peak examination cycles.",
+      "deliverables": [
+        "Student Information Systems (SIS)",
+        "Automated Course Registration & Fee Dockets",
+        "Paperwork Reduction by 60%",
+        "Cloudinary Media Pipeline (40% faster load speeds)"
+      ]
     },
     {
-      "id": "fullstack-arch",
-      "title": "Full-Stack System Architecture",
-      "subtitle": "02 / Scalable Platforms",
-      "description": "End-to-end web apps designed for durability, from bulletproof TypeScript backends and low-latency databases to reactive frontends.",
-      "deliverables": ["SaaS Application Development", "High-Throughput REST & GraphQL APIs", "Real-Time Streaming Systems", "Cloudflare Edge Deployments"]
+      "id": "laravel-spa",
+      "title": "Full-Stack Laravel & Inertia.js SPAs",
+      "subtitle": "02 / Modern Web Craft",
+      "description": "End-to-end web apps designed with Laravel 11, Inertia.js, and Vue.js for seamless client-side speed without sacrificing backend elegance.",
+      "deliverables": [
+        "Single-Page Application (SPA) Engineering",
+        "RESTful API & Microservice Integration",
+        "Clean Relational MySQL Schema Design",
+        "AWS RDS & SES Cloud Deployment"
+      ]
     },
     {
-      "id": "ai-solutions",
-      "title": "Agentic AI & Workflow Canvases",
-      "subtitle": "03 / Generative Intelligence",
-      "description": "Bridging powerful language and diffusion models into human-friendly interactive visual workspaces with instant feedback loops.",
-      "deliverables": ["Custom LLM Agent Architectures", "Vector Retrieval & Knowledge RAG", "Interactive Canvas UIs", "Automated Evaluation Frameworks"]
+      "id": "payment-solutions",
+      "title": "Automated Instant Payment Systems",
+      "subtitle": "03 / High-Volume Fintech",
+      "description": "Designing automated instant transaction solutions processing billions in annual volume with strict idempotency and audit trails.",
+      "deliverables": [
+        "High-Volume Payment Gateway Integration (10B+ NGN Annual Volume)",
+        "Secure Webhook Settlement Handlers",
+        "Tamper-Evident Audit Logs",
+        "Real-Time Transaction Status Telemetry"
+      ]
     },
     {
-      "id": "advisory",
-      "title": "Technical Advisory & Audits",
-      "subtitle": "04 / Leadership & Strategy",
-      "description": "High-level guidance for seed-stage to Series B engineering teams on frontend ergonomics, animation pipelines, and architecture roadmaps.",
-      "deliverables": ["Codebase Performance Audits", "Frontend Architecture Blueprints", "Hiring & Interview Calibration", "Team Workshops on Motion Web"]
+      "id": "technical-writing",
+      "title": "Technical Writing & Developer Documentation",
+      "subtitle": "04 / Clear Communication",
+      "description": "Translating intricate software architecture into crystal-clear documentation, developer onboarding guides, and user manuals.",
+      "deliverables": [
+        "Comprehensive API References & SDK Guides",
+        "System Architecture Blueprints",
+        "End-User Training Manuals & SOPs",
+        "Open-Source Technical Articles"
+      ]
     }
   ],
   "experience": [
     {
-      "role": "Staff Creative Engineer & Architect",
-      "company": "Hyperion Labs",
-      "period": "2024 — Present",
-      "location": "San Francisco, CA (Hybrid)",
+      "role": "Web Developer & System Programmer",
+      "company": "Tai Solarin University of Education (TASUED)",
+      "period": "Dec 2022 — Present",
+      "location": "Ijagun, Nigeria",
       "badge": "Current Role",
-      "description": "Leading the core creative engineering cell building next-generation human-AI collaboration tools and generative workspaces.",
+      "description": "Designing, building, and maintaining core institutional ICT systems and student portals serving over 20,000 active students and university staff.",
       "highlights": [
-        "Spearheaded redesign of the spatial canvas engine, cutting memory consumption by 45%",
-        "Mentored a cross-functional squad of 11 engineers and product designers in motion design and accessibility",
-        "Architected real-time WebSocket protocol supporting 10,000 concurrent multiplayer canvas users"
+        "Built a digital reservation & membership system in Laravel + Inertia, streamlining student services and reducing manual paperwork by 60%",
+        "Architected secure application deployments utilizing AWS cloud services (SES, RDS)",
+        "Led full integration of Cloudinary for optimized image uploads and media delivery, improving portal load speeds by 40%",
+        "Spearheaded digital transformation projects that significantly enhanced faculty reporting efficiency and academic record workflows"
       ],
-      "technologies": ["React 19", "TypeScript", "WebSockets", "Rust / WASM", "WebGL"]
+      "technologies": ["PHP (Laravel 11)", "Vue.js", "Inertia.js", "MySQL", "AWS (RDS, SES)", "Cloudinary API", "Tailwind CSS"]
     },
     {
-      "role": "Senior Full-Stack Technologist",
-      "company": "Nexus Interactive",
-      "period": "2022 — 2024",
-      "location": "Remote / New York",
-      "badge": "2 Years",
-      "description": "Developed interactive 3D product showcases, financial dashboards, and edge-rendered web applications for enterprise clients.",
+      "role": "Full-Stack Laravel Developer",
+      "company": "Autocredit Payments",
+      "period": "March 2019 — Dec 2020",
+      "location": "Ijebu-Ode, Nigeria",
+      "badge": "Fintech Scale",
+      "description": "Developed and maintained automated instant payment solutions processing approximately 10 billion NGN annually with high reliability and zero downtime.",
       "highlights": [
-        "Delivered 14 bespoke commercial web experiences with an average Google Lighthouse performance score of 98+",
-        "Introduced automated visual regression and motion testing pipelines across the engineering organization",
-        "Received three international web awards for exceptional interface craft"
+        "Engineered automated instant payment pipelines processing ~10 Billion NGN in annual settlement volume",
+        "Collaborated with an agile cross-functional squad to design system architecture for new financial products",
+        "Interfaced directly with enterprise clients to gather feedback and refine technical specifications to business needs",
+        "Built dynamic single-page applications (SPAs) with Inertia.js, Laravel, Vue.js, and MySQL"
       ],
-      "technologies": ["Next.js", "Three.js", "Node.js", "PostgreSQL", "Tailwind/CSS", "AWS"]
-    },
-    {
-      "role": "Full-Stack Design Engineer",
-      "company": "Voxel Matrix Studio",
-      "period": "2020 — 2022",
-      "location": "San Francisco, CA",
-      "badge": "2 Years",
-      "description": "Built reactive web applications, interactive audio synthesis tools, and crypto treasury consoles.",
-      "highlights": [
-        "Crafted custom Web Audio DSP synthesizer with real-time waveform visualizers",
-        "Engineered zero-dependency micro-interaction system adopted by 5 product lines",
-        "Collaborated directly with founders to translate brand identities into interactive web physics"
-      ],
-      "technologies": ["React", "Web Audio API", "Express", "MongoDB", "CSS Modules"]
-    },
-    {
-      "role": "Frontend Software Engineer",
-      "company": "Studio Aurora",
-      "period": "2018 — 2020",
-      "location": "Seattle, WA",
-      "badge": "2 Years",
-      "description": "Built foundational responsive interfaces, microservices, and component libraries for high-traffic media brands.",
-      "highlights": [
-        "Engineered modular UI kit used across 20+ consumer websites",
-        "Optimized mobile assets and critical rendering paths, improving load times by 2.4 seconds"
-      ],
-      "technologies": ["JavaScript ES6+", "HTML5/CSS3", "React", "REST APIs", "Webpack"]
+      "technologies": ["PHP", "Laravel", "Vue.js", "Inertia.js", "MySQL", "JavaScript", "Git/GitHub", "REST APIs"]
     }
   ],
   "education": [
     {
-      "degree": "B.S. in Computer Science & Human-Computer Interaction",
-      "institution": "University of California, Berkeley",
-      "period": "2014 — 2018",
-      "notes": "Graduated Magna Cum Laude • President of Creative Computing Society"
+      "degree": "B.Sc., Computer Science",
+      "institution": "Olabisi Onabanjo University, Nigeria",
+      "period": "Sep 2015 — Mar 2018",
+      "notes": "Bachelor of Science in Computer Science • In-depth focus on Systems Programming, Database Systems, Web Architectures, and Algorithm Design"
     },
     {
-      "degree": "Advanced Interactive Computer Graphics & Shaders",
-      "institution": "MIT OpenCourseWare / ShaderToy Lab",
-      "period": "2020",
-      "notes": "Specialization in raymarching, GLSL, and low-level GPU rasterization"
+      "degree": "Assistant Judge – Startup Competition",
+      "institution": "Hult Prize TASUED Chapter (2025)",
+      "period": "2025",
+      "notes": "Selected as Assistant Judge for the prestigious Hult Prize university competition. Evaluated student startups on technical feasibility, innovation, and social impact."
     }
   ],
   "testimonials": [
     {
-      "quote": "Tobiloba is that rare 1-in-a-million engineer who can architect bulletproof enterprise database systems and simultaneously deliver interfaces that users love. His work on our institutional portals completely elevated our digital infrastructure.",
-      "author": "Dr. O. Adeleke",
-      "title": "Director of ICT & Academic Computing",
-      "company": "Institutional Systems",
+      "quote": "Oluwatobiloba's work on our university ICT systems has been transformative. The reservation and portal architectures he built reduced paperwork by 60% and made life easier for over 20,000 students and staff.",
+      "author": "ICT Directorate",
+      "title": "Directorate of Academic Computing",
+      "company": "Tai Solarin University of Education",
       "rating": 5
     },
     {
-      "quote": "The speed, reliability, and security Tobiloba brought to our e-voting and portal pipelines was exceptional. Handling peak election and registration traffic without a hitch made all the difference.",
-      "author": "Engr. Kenneth M.",
-      "title": "Chief Technology Consultant",
-      "company": "EduTech Solutions",
+      "quote": "Handling 10 billion NGN annually requires uncompromising precision. Tobiloba's automated payment systems ran reliably, securely, and seamlessly.",
+      "author": "Autocredit Leadership",
+      "title": "Head of Engineering",
+      "company": "Autocredit Payments",
       "rating": 5
     },
     {
-      "quote": "Unmatched precision and dedication. Whether building high-converting event platforms or deploying AI applications, Oluwatobiloba is the architect you want leading the engineering effort.",
-      "author": "David C.",
-      "title": "Product Lead",
-      "company": "Fast & Fun Media",
+      "quote": "As an Assistant Judge for the Hult Prize, Oluwatobiloba provided exceptional technical insights and constructive feedback that helped early-stage student founders refine their startup architectures.",
+      "author": "Organizing Committee",
+      "title": "Hult Prize TASUED Chapter",
+      "company": "Global Social Impact Competition",
       "rating": 5
     }
   ],
   "faq": [
     {
-      "q": "What is your typical project engagement structure?",
-      "a": "I work on both fixed-scope architectural builds (custom university portals, LMS platforms, web applications) and long-term technical leadership retainers for engineering teams."
+      "q": "What is your primary technology stack?",
+      "a": "My core stack centers on PHP (Laravel 11), Vue.js, Inertia.js, MySQL, Tailwind CSS, Bootstrap, AWS (RDS, SES), and Cloudinary API."
     },
     {
-      "q": "Can you handle both UI design and full-stack code?",
-      "a": "Yes! I bridge frontend craftsmanship (React, Next.js, modern CSS animations) with backend systems (PHP/Laravel, Node.js, Python, MySQL, Redis, REST APIs, and database optimization)."
+      "q": "Are you open to relocation?",
+      "a": "Yes! I am actively open to relocation and eager to contribute to Canada’s growing digital economy as well as forward-thinking engineering teams globally."
     },
     {
-      "q": "What is your availability for new projects?",
-      "a": "I am open for select high-leverage software engineering contracts, portal modernizations, and full-stack consulting."
+      "q": "What kind of projects do you typically take on?",
+      "a": "I specialize in university ICT systems, institutional student portals, automated instant payment architectures, and full-stack SPAs."
     },
     {
-      "q": "How can we kick off a collaboration?",
-      "a": "Use the contact page form or email me directly at oluwatobiloba.williams.dev@gmail.com with your project overview. I usually respond within 24 hours."
+      "q": "How can recruiters and engineering teams reach you?",
+      "a": "Email me directly at willnagato@outlook.com or call +2348060179143. You can also connect with me on GitHub (@ohiolei) and LinkedIn."
     }
   ]
 }

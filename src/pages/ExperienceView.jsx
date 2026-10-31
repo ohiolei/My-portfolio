@@ -26,7 +26,7 @@ export default function ExperienceView({ experience, education, onNavigate }) {
         <div className="exp-bar-info">
           <span className="live-beacon" />
           <span className="font-mono exp-status-text">
-            8+ years building enterprise software, AI pipelines & interactive canvases
+            5+ years building scalable web applications, university ICT systems & instant payment platforms
           </span>
         </div>
         <button

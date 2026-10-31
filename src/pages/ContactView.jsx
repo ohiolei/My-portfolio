@@ -279,13 +279,14 @@ export default function ContactView({ personal }) {
               <span className="live-beacon" />
               <span className="font-mono avail-tag">CALENDAR STATUS</span>
             </div>
-            <h4 className="avail-title font-display">Active & Booking</h4>
+            <h4 className="avail-title font-display">System Programmer • Open to Relocation</h4>
             <p className="avail-desc">
-              Taking on 2 select design engineering & architecture projects for Q4/Q1. Estimated onboarding turnaround: <strong>5-7 business days</strong>.
+              Currently delivering university ICT solutions at TASUED. Eager and actively <strong>open to relocation</strong> to contribute to Canada's growing digital economy and global engineering teams.
             </p>
             <div className="timezones font-mono">
-              <div>📍 Location: San Francisco (PST / UTC-8)</div>
-              <div>⚡ Global overlap: 4 hours daily with EU & APAC</div>
+              <div>📍 Location: {personal.location}</div>
+              <div>📞 Phone: {personal.phone}</div>
+              <div>⚡ Timezone: West Africa Time (WAT / UTC+1) • Flexible with EU/EST</div>
             </div>
           </div>
 

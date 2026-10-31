@@ -5,7 +5,6 @@ export default function Navbar({
   activePage,
   setActivePage,
   navLinks,
-  onOpenJsonModal,
   currentTheme,
   setTheme
 }) {
@@ -160,20 +159,6 @@ export default function Navbar({
               )}
             </div>
 
-            {/* Inspect JSON Modal Button */}
-            <button
-              className="toolbar-btn json-btn"
-              onClick={() => {
-                soundManager.playClick();
-                onOpenJsonModal();
-              }}
-              onMouseEnter={() => soundManager.playHover()}
-              title="Inspect JSON Data Source"
-            >
-              <span className="font-mono">{'{ }'}</span>
-              <span className="json-btn-text">DATA.JSON</span>
-            </button>
-
             {/* Mobile Hamburger Toggle */}
             <button
               className="mobile-hamburger"
@@ -222,13 +207,13 @@ export default function Navbar({
 
           <div className="mobile-drawer-footer">
             <button
-              className="btn btn-secondary full-width"
+              className="btn btn-primary full-width"
               onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenJsonModal();
+                soundManager.playClick();
+                handleNavClick('contact');
               }}
             >
-              Inspect Data.JSON
+              Get in Touch →
             </button>
           </div>
         </div>
