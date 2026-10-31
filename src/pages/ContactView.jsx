@@ -48,9 +48,24 @@ export default function ContactView({ personal }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const getMailtoUrl = () => {
+    const subject = encodeURIComponent(
+      `Collaboration Inquiry: ${formData.projectType} — ${formData.name || 'Visitor'}`
+    );
+    const body = encodeURIComponent(
+      `Hello ${personal.name},\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Focus Area: ${formData.projectType}\n` +
+      `Estimated Investment: ${formData.budget}\n\n` +
+      `Project Brief / Message:\n${formData.message}\n`
+    );
+    return `mailto:${personal.email}?subject=${subject}&body=${body}`;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       alert('Please fill out your name, email, and a brief message.');
       return;
     }
@@ -58,10 +73,38 @@ export default function ContactView({ personal }) {
     soundManager.playClick();
     setFormStatus('sending');
 
-    setTimeout(() => {
-      soundManager.playSuccess();
-      setFormStatus('sent');
-    }, 1200);
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(personal.email)}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Transmission from ${formData.name} via Portfolio`,
+          _replyto: formData.email,
+          _template: 'table',
+          _captcha: 'false',
+          Name: formData.name,
+          Email: formData.email,
+          'Focus Area': formData.projectType,
+          'Estimated Investment': formData.budget,
+          Message: formData.message
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
+      if (response.ok || result.success === 'true' || result.success === true) {
+        soundManager.playSuccess();
+        setFormStatus('sent');
+      } else {
+        throw new Error(result.message || 'Transmission failed to deliver.');
+      }
+    } catch (err) {
+      console.warn('Direct API submission encountered an error, activating mail client fallback:', err);
+      soundManager.playClick();
+      setFormStatus('fallback');
+    }
   };
 
   return (
@@ -84,26 +127,62 @@ export default function ContactView({ personal }) {
             {formStatus === 'sent' ? (
               <div className="form-success-state">
                 <div className="success-icon-ring">✓</div>
-                <h3 className="success-title font-display">Transmission Received</h3>
+                <h3 className="success-title font-display">Transmission Dispatched</h3>
                 <p className="success-desc">
-                  Thank you, <strong>{formData.name}</strong>. Your message has been encrypted and routed directly to {personal.name}'s priority inbox. You can expect a thoughtful response within 24 hours.
+                  Thank you, <strong>{formData.name}</strong>. Your message has been sent directly to <strong>{personal.email}</strong>. You will receive a response within 24 hours.
                 </p>
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    soundManager.playClick();
-                    setFormStatus('idle');
-                    setFormData({
-                      name: '',
-                      email: '',
-                      projectType: 'Full-Stack Architecture',
-                      budget: '$25k - $50k',
-                      message: ''
-                    });
-                  }}
-                >
-                  Send Another Inquiry
-                </button>
+                <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '10px' }}>
+                  <a
+                    href={getMailtoUrl()}
+                    className="btn btn-secondary font-mono"
+                    style={{ fontSize: '0.85rem' }}
+                    onClick={() => soundManager.playHover()}
+                  >
+                    Open Backup Copy in Mail Client ↗
+                  </a>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                      soundManager.playClick();
+                      setFormStatus('idle');
+                      setFormData({
+                        name: '',
+                        email: '',
+                        projectType: 'Full-Stack Architecture',
+                        budget: '$25k - $50k',
+                        message: ''
+                      });
+                    }}
+                  >
+                    Send Another Inquiry
+                  </button>
+                </div>
+              </div>
+            ) : formStatus === 'fallback' ? (
+              <div className="form-success-state">
+                <div className="success-icon-ring" style={{ borderColor: 'var(--accent-secondary)', color: 'var(--accent-secondary)' }}>✉</div>
+                <h3 className="success-title font-display">Ready to Send via Email</h3>
+                <p className="success-desc">
+                  Click below to open your preferred mail app (Outlook, Gmail, or Apple Mail) with all your details pre-addressed to <strong>{personal.email}</strong>.
+                </p>
+                <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '10px' }}>
+                  <a
+                    href={getMailtoUrl()}
+                    className="btn btn-primary"
+                    onClick={() => soundManager.playSuccess()}
+                  >
+                    Launch Mail Client & Send →
+                  </a>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => {
+                      soundManager.playClick();
+                      setFormStatus('idle');
+                    }}
+                  >
+                    Return to Form
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form">
@@ -239,14 +318,25 @@ export default function ContactView({ personal }) {
                   onMouseEnter={() => soundManager.playHover()}
                 >
                   {formStatus === 'sending' ? (
-                    <span>Encrypting & Routing Transmission...</span>
+                    <span>Routing Transmission to {personal.email}...</span>
                   ) : (
                     <>
-                      <span>Transmit Message</span>
+                      <span>Transmit Message to {personal.name}</span>
                       <span>⚡</span>
                     </>
                   )}
                 </button>
+
+                <div className="direct-mailto-hint font-mono">
+                  <span>Delivers directly to: <strong className="text-gradient-neon">{personal.email}</strong></span>
+                  <a
+                    href={getMailtoUrl()}
+                    className="mailto-direct-link"
+                    onClick={() => soundManager.playClick()}
+                  >
+                    Open in default mail client ↗
+                  </a>
+                </div>
               </form>
             )}
           </div>
