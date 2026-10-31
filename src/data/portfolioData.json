@@ -85,7 +85,7 @@
         "uptime": "99.9% Uptime",
         "courses": "240+ Accredited Modules"
       },
-      "tags": ["React", "PHP", "MySQL", "LMS", "REST API", "Tailwind CSS"],
+      "tags": ["Vue", "PHP", "MySQL", "LMS", "REST API", "Tailwind CSS"],
       "shortDesc": "Enterprise academic digital learning management system supporting curriculum delivery, lecture materials, continuous assessment tests, and student grade tracking.",
       "overview": "LMS TASCE modernizes tertiary education delivery by providing students and lecturers with a centralized, high-availability platform for digital coursework, virtual submissions, and examination management.",
       "challenge": "Handling peak concurrent login traffic during examination windows and assignment deadlines without server degradation.",
@@ -112,7 +112,7 @@
         "engagement": "3.8x Study Session Length",
         "retention": "82% Monthly Retention"
       },
-      "tags": ["React", "Node.js", "Express", "MongoDB", "Gamification", "Tailwind CSS"],
+      "tags": ["Vue", "Node.js", "Express", "MongoDB", "Gamification", "Tailwind CSS"],
       "shortDesc": "Gamified edtech platform empowering students with simulated mock exams, timed challenges, performance analytics, and interactive reward systems.",
       "overview": "Online Efiko transforms standard exam preparation into an engaging, gamified journey with real-time peer challenges, XP leaderboards, and AI-assisted performance insights.",
       "challenge": "Balancing real-time leaderboard computations with ultra-low latency test delivery on mobile devices with variable internet connections.",
@@ -139,7 +139,7 @@
         "lighthouse": "96 Performance Score",
         "accessibility": "100% WCAG Compliant"
       },
-      "tags": ["PHP", "JavaScript", "Modern CSS", "SEO Architecture", "MySQL", "UI/UX"],
+      "tags": ["Vue", "JavaScript", "Modern CSS", "SEO Architecture", "MySQL", "UI/UX"],
       "shortDesc": "The primary digital portal for Tai Solarin University of Education, serving students, faculty, alumni, and global visitors with high accessibility.",
       "overview": "The official university website acts as the flagship digital interface for TASUED, integrating news bulletins, admissions portals, faculty directories, and institutional announcements.",
       "challenge": "Delivering responsive, lightning-fast page loads to hundreds of thousands of concurrent visitors during admissions and matriculation announcements.",
@@ -166,7 +166,7 @@
         "fraud": "Zero Disputed Ballots",
         "speed": "Instant Election Results"
       },
-      "tags": ["React", "Secure Auth", "WebSockets", "MySQL", "Audit Logs", "Encryption"],
+      "tags": ["Vue", "Secure Auth", "WebSockets", "MySQL", "Audit Logs", "Encryption"],
       "shortDesc": "Next-generation electronic balloting and election telemetry platform featuring biometric student verification, zero-knowledge tallying, and live dashboard metrics.",
       "overview": "Built for institutional student union and council elections, this system ensures 100% transparency, voter confidentiality, and immediate result publication.",
       "challenge": "Preventing duplicate voting, credential stuffing, and vote tampering under high-stress election deadlines.",
@@ -247,7 +247,7 @@
         "mobileTraffic": "78% Mobile Users",
         "experience": "Interactive 3D Booking"
       },
-      "tags": ["React", "Next.js", "Tailwind CSS", "Stripe Checkout", "Smooth Motion"],
+      "tags": ["Vue", "Next.js", "Tailwind CSS", "Stripe Checkout", "Smooth Motion"],
       "shortDesc": "Vibrant consumer entertainment platform featuring event bookings, interactive ticketing, media showcases, and customer engagement.",
       "overview": "Fast and Fun delivers an exciting, high-energy digital brand presence for extreme sports and recreational entertainment in Canada.",
       "challenge": "Creating an exhilarating visual design that captures real-world adrenaline while keeping checkout friction down to under 60 seconds.",
@@ -274,7 +274,7 @@
         "models": "Multi-Modal LLM Support",
         "streaming": "Real-Time Token Streaming"
       },
-      "tags": ["Next.js", "React", "OpenAI API", "Tailwind CSS", "TypeScript", "Vercel"],
+      "tags": ["Nuxt.js", "Vue", "OpenAI API", "Tailwind CSS", "TypeScript", "Vercel"],
       "shortDesc": "Intelligent AI assistant platform powered by modern LLMs for automated copywriting, code generation, creative reasoning, and workflow acceleration.",
       "overview": "Wizard AI leverages generative deep learning to automate repetitive developer and content workflows through a sleek, responsive conversational interface.",
       "challenge": "Implementing seamless token streaming and markdown code syntax highlighting without rendering bottlenecks.",
