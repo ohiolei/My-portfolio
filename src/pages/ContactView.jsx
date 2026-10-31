@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Card3DTilt from '../components/Card3DTilt';
 import { soundManager } from '../utils/audio';
 
-export default function ContactView({ personal }) {
+export default function ContactView({ personal, onNotify }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,6 +32,7 @@ export default function ContactView({ personal }) {
     navigator.clipboard.writeText(personal.email);
     soundManager.playSuccess();
     setCopiedEmail(true);
+    onNotify?.(`Copied ${personal.email} to clipboard! 📋`);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
@@ -97,6 +98,7 @@ export default function ContactView({ personal }) {
       if (response.ok || result.success === 'true' || result.success === true) {
         soundManager.playSuccess();
         setFormStatus('sent');
+        onNotify?.('Message delivered directly to willnagato@outlook.com! 🚀');
       } else {
         throw new Error(result.message || 'Transmission failed to deliver.');
       }

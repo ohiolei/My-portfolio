@@ -6,7 +6,8 @@ export default function Navbar({
   setActivePage,
   navLinks,
   currentTheme,
-  setTheme
+  setTheme,
+  onOpenPalette
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -100,6 +101,24 @@ export default function Navbar({
 
           {/* Utility Toolbar */}
           <div className="nav-toolbar">
+            {/* Quick Command Palette Button */}
+            <button
+              className="toolbar-btn command-trigger-btn font-mono"
+              onClick={() => {
+                soundManager.playClick();
+                onOpenPalette?.();
+              }}
+              onMouseEnter={() => soundManager.playHover()}
+              title="Command Palette (Ctrl + K / ⌘K)"
+              aria-label="Open Command Palette"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <span className="kbd-shortcut">⌘K</span>
+            </button>
+
             {/* Audio Toggle */}
             <button
               className={`toolbar-btn sound-btn ${!isMuted ? 'active-audio' : ''}`}

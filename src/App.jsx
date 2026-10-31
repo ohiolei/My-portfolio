@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import portfolioData from './data/portfolioData.json';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AmbientCanvas from './components/AmbientCanvas';
 import CustomCursor from './components/CustomCursor';
 import ProjectModal from './components/ProjectModal';
+import CommandPalette from './components/CommandPalette';
+import BackToTop from './components/BackToTop';
+import { soundManager } from './utils/audio';
 
 // Pages
 import HomeView from './pages/HomeView';
@@ -29,6 +32,57 @@ function App() {
   const [activePage, setActivePage] = useState(getInitialPage);
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentTheme, setCurrentTheme] = useState('cyber');
+  const [isPaletteOpen, setIsPaletteOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [toasts, setToasts] = useState([]);
+  const [isMuted, setIsMuted] = useState(soundManager.getIsMuted());
+
+  // Show interactive glass toast notification
+  const showToast = useCallback((message, type = 'info') => {
+    const id = Date.now() + Math.random().toString(36).substring(2, 6);
+    setToasts((prev) => [...prev, { id, message, type }]);
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t) => t.id !== id));
+    }, 3200);
+  }, []);
+
+  const toggleSound = useCallback(() => {
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+    soundManager.setMuted(nextMuted);
+    if (!nextMuted) {
+      soundManager.playSuccess();
+    }
+  }, [isMuted]);
+
+  // Track window scroll progress for progress bar and back to top
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        const currentProgress = (window.scrollY / totalScroll) * 100;
+        setScrollProgress(Math.min(100, Math.max(0, currentProgress)));
+      } else {
+        setScrollProgress(0);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Global Ctrl+K / Cmd+K listener to toggle Command Palette
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        soundManager.playClick();
+        setIsPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Sync hash routing and browser back/forward buttons
   useEffect(() => {
@@ -53,6 +107,16 @@ function App() {
 
   return (
     <>
+      {/* Top Real-time Reading / Scroll Progress Bar */}
+      <div
+        className="scroll-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
+
+      {/* Subtle Tactile Ambient Noise Texture */}
+      <div className="ambient-noise-overlay" aria-hidden="true" />
+
       {/* Interactive Background Canvas */}
       <AmbientCanvas />
 
@@ -73,6 +137,7 @@ function App() {
         navLinks={portfolioData.navigation}
         currentTheme={currentTheme}
         setTheme={setCurrentTheme}
+        onOpenPalette={() => setIsPaletteOpen(true)}
       />
 
       {/* Main Page Content */}
@@ -118,7 +183,10 @@ function App() {
         )}
 
         {activePage === 'contact' && (
-          <ContactView personal={portfolioData.personal} />
+          <ContactView
+            personal={portfolioData.personal}
+            onNotify={showToast}
+          />
         )}
       </main>
 
@@ -128,12 +196,41 @@ function App() {
         onNavigate={navigateTo}
       />
 
+      {/* Floating Back to Top Button */}
+      <BackToTop scrollProgress={scrollProgress} />
+
+      {/* Command Palette Modal (Ctrl+K / ⌘K) */}
+      <CommandPalette
+        isOpen={isPaletteOpen}
+        onClose={() => setIsPaletteOpen(false)}
+        onNavigate={navigateTo}
+        personal={portfolioData.personal}
+        projects={portfolioData.projects}
+        setTheme={setCurrentTheme}
+        currentTheme={currentTheme}
+        isMuted={isMuted}
+        toggleSound={toggleSound}
+        onNotify={showToast}
+      />
+
       {/* Interactive Project Case Study Modal */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
+      )}
+
+      {/* Global Glass Toast Notifications */}
+      {toasts.length > 0 && (
+        <div className="toast-container" role="status" aria-live="polite">
+          {toasts.map((toast) => (
+            <div key={toast.id} className="toast glass-panel">
+              <span className="toast-dot" />
+              <span className="toast-message font-mono">{toast.message}</span>
+            </div>
+          ))}
+        </div>
       )}
     </>
   );

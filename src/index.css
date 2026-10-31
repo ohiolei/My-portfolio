@@ -581,6 +581,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes radarRipple {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes circuitFlow {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
 @keyframes pageEnter {
   from {
     opacity: 0;
@@ -594,6 +634,108 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-transition {
   animation: pageEnter 0.45s var(--ease-smooth) forwards;
+}
+
+/* Gradient Text Utilities with Iridescent Shimmer */
+.text-gradient {
+  background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 50%, #f472b6 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 8s ease-in-out infinite alternate;
+  display: inline-block;
+}
+
+.text-gradient-neon {
+  background: linear-gradient(135deg, #c084fc 0%, #22d3ee 50%, #818cf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s ease-in-out infinite alternate;
+  display: inline-block;
+}
+
+/* Real-time Reading / Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, #f43f5e 100%);
+  box-shadow: 0 0 12px var(--accent-secondary), 0 0 6px var(--accent-primary);
+  z-index: 10001;
+  pointer-events: none;
+  transition: width 0.06s linear;
+}
+
+/* Tactile Ambient Film Grain / Noise Texture */
+.ambient-noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.024;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Floating Back to Top Telemetry Widget */
+.floating-back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 995;
+  cursor: pointer;
+  background: rgba(14, 19, 36, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium);
+  animation: pageEnter 0.3s ease-out;
+}
+
+.floating-back-to-top:hover {
+  transform: translateY(-4px) scale(1.08);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 22px var(--accent-cyan-glow), var(--shadow-lg);
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.progress-ring-track {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.progress-ring-indicator {
+  stroke: var(--accent-secondary);
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.back-arrow {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.floating-back-to-top:hover .back-arrow {
+  transform: translateY(-2px);
+  color: var(--accent-secondary);
 }
 
 /* Custom Scrollbar */
@@ -615,7 +757,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--accent-primary);
 }
 
-/* Toast Notifications */
+/* Glass Toast Notifications */
 .toast-container {
   position: fixed;
   bottom: 24px;
@@ -628,17 +770,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toast {
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid var(--accent-secondary);
+  background: rgba(11, 16, 32, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-highlight);
   color: #ffffff;
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent-cyan-glow);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   pointer-events: auto;
-  animation: pageEnter 0.3s ease-out;
+  animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 8px var(--accent-secondary);
+  flex-shrink: 0;
+}
+
+.toast-message {
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
