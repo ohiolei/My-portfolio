@@ -1,0 +1,368 @@
+{
+  "personal": {
+    "name": "Aura Vance",
+    "nickname": "aura.sys",
+    "title": "New-Age Creative Technologist & Full-Stack Architect",
+    "tagline": "Architecting hyper-fluid digital experiences, generative agent canvases, and sensory web systems.",
+    "availabilityStatus": "Available for select Q4/Q1 contracts & high-impact roles",
+    "location": "San Francisco, CA & Global Remote",
+    "email": "aura.vance.dev@gmail.com",
+    "phone": "+1 (415) 890-4421",
+    "yearsOfExperience": 8,
+    "avatarKey": "avatar",
+    "bioSummary": "A craft-obsessed creative engineer sitting at the razor-sharp nexus of generative intelligence, spatial interfaces, and reactive distributed systems.",
+    "bioParagraphs": [
+      "I bridge the gap between speculative design and rock-solid production code. Over the last 8 years, I have architected web systems and sensory interfaces for venture-backed startups, research labs, and frontier AI companies.",
+      "My work is rooted in buttery 60fps micro-interactions, mathematically rigorous typography, kinetic layout engines, and zero-compromise developer ergonomics.",
+      "When I step away from the IDE, you will find me experimenting with modular analog synths, contributing to open-source shaders, and analyzing brutalist architecture."
+    ],
+    "socials": [
+      {
+        "id": "github",
+        "name": "GitHub",
+        "url": "https://github.com",
+        "handle": "@auravance",
+        "accent": "#00f0ff"
+      },
+      {
+        "id": "linkedin",
+        "name": "LinkedIn",
+        "url": "https://linkedin.com",
+        "handle": "in/aura-vance",
+        "accent": "#0077b5"
+      },
+      {
+        "id": "twitter",
+        "name": "X / Twitter",
+        "url": "https://x.com",
+        "handle": "@aura_vance",
+        "accent": "#ff007f"
+      },
+      {
+        "id": "dribbble",
+        "name": "Dribbble",
+        "url": "https://dribbble.com",
+        "handle": "auravance",
+        "accent": "#ea4c89"
+      },
+      {
+        "id": "discord",
+        "name": "Discord",
+        "url": "https://discord.com",
+        "handle": "auratech#0001",
+        "accent": "#5865f2"
+      }
+    ]
+  },
+  "stats": [
+    { "label": "Years in Production", "value": "8+", "detail": "From seed startups to tier-1 tech" },
+    { "label": "Shipped Projects", "value": "42+", "detail": "Full-stack apps, AI nodes & SDKs" },
+    { "label": "GitHub Stars", "value": "14.8k", "detail": "Across open source web repositories" },
+    { "label": "Client CSAT", "value": "99.4%", "detail": "Consistent 5-star delivery track record" }
+  ],
+  "currentVibe": {
+    "track": "Resonance — Spatial Synthesis Edit",
+    "artist": "HOME & Lorn",
+    "status": "Currently coding WebGPU particle physics engine",
+    "focus": "Generative UI Pipelines & Distributed State Machines"
+  },
+  "navigation": [
+    { "id": "home", "label": "Overview", "badge": "01", "hint": "Hero & Highlights" },
+    { "id": "projects", "label": "Works", "badge": "02", "hint": "Interactive Portfolio" },
+    { "id": "skills", "label": "Capabilities", "badge": "03", "hint": "Stack & Services" },
+    { "id": "experience", "label": "Timeline", "badge": "04", "hint": "Career & Journey" },
+    { "id": "about", "label": "Story", "badge": "05", "hint": "Philosophy & Vibe" },
+    { "id": "contact", "label": "Connect", "badge": "06", "hint": "Hire & Inquire" }
+  ],
+  "projects": [
+    {
+      "id": "ai-neural-canvas",
+      "title": "Aetheris AI Canvas",
+      "subtitle": "Next-Gen Generative Visual Pipeline & Neural Agent Workspace",
+      "category": "AI & Generative",
+      "imageKey": "aiCanvas",
+      "featured": true,
+      "year": "2024",
+      "metrics": {
+        "latency": "18ms edge latency",
+        "throughput": "1.2M pipeline executions/day",
+        "stars": "4.2k stars"
+      },
+      "tags": ["React 19", "Web Workers", "FastAPI", "Python", "Vector RAG", "Tailwind/CSS", "LangChain"],
+      "shortDesc": "An infinite drag-and-drop workspace for chaining multi-modal AI agents, vector memories, and live inference pipelines in real time.",
+      "overview": "Aetheris AI Canvas was designed for frontier AI engineering teams needing an intuitive node-based IDE to visualize, inspect, and benchmark multi-agent systems.",
+      "challenge": "Rendering hundreds of reactive nodes with bidirectional data pipes and live data streams while maintaining a strict 60fps frame budget across desktop and tablet devices.",
+      "solution": "Built a custom canvas reconciliation engine decoupling visual node state from heavy worker-thread LLM streaming payloads, resulting in zero UI thread stuttering.",
+      "achievements": [
+        "Scaled to over 240,000 active monthly researchers across 12 countries",
+        "Featured on Product Hunt as #1 Product of the Day and #1 Product of the Week",
+        "Reduced workflow iteration time by 68% compared to traditional code-only agent chains"
+      ],
+      "liveUrl": "https://aetheris-canvas.demo",
+      "githubUrl": "https://github.com/auravance/aetheris-canvas"
+    },
+    {
+      "id": "quantum-telemetry",
+      "title": "Aethelred Core Telemetry",
+      "subtitle": "High-Frequency Holographic Cloud Infrastructure & Financial HUD",
+      "category": "Full Stack",
+      "imageKey": "quantumAnalytics",
+      "featured": true,
+      "year": "2024",
+      "metrics": {
+        "dataRate": "4.8 TB/s real-time ingest",
+        "accuracy": "99.999% SLA",
+        "award": "Behance Award Winner 2024"
+      },
+      "tags": ["React", "WebGL Globe", "WebSockets", "Node.js", "Redis Streams", "TimescaleDB"],
+      "shortDesc": "Real-time enterprise HUD visualizing global server clusters, latency telemetry, anomaly detection, and cross-border currency settlement.",
+      "overview": "A mission-critical control center interface built for autonomous systems monitoring, combining 3D spatial globe telemetry with ultra-low latency charts.",
+      "challenge": "Displaying continuous 100Hz tick updates from 18 edge datacenters without CPU throttling or memory leaks over 24-hour persistent browser sessions.",
+      "solution": "Implemented WebGL-accelerated chart shaders and ring-buffer data structures in WebAssembly to offload calculations from the JavaScript garbage collector.",
+      "achievements": [
+        "Awarded Behance Award Winner for Outstanding Systems Design",
+        "Zero memory growth over 72-hour continuous stress tests",
+        "Adopted by 3 Tier-1 fintech infrastructures"
+      ],
+      "liveUrl": "https://aethelred-telemetry.demo",
+      "githubUrl": "https://github.com/auravance/aethelred-telemetry"
+    },
+    {
+      "id": "auralis-spatial",
+      "title": "Auralis Spatial Workstation",
+      "subtitle": "Browser-Based 3D Ambisonics Sound Synthesizer & Waveform Matrix",
+      "category": "Spatial & Audio",
+      "imageKey": "spatialAudio",
+      "featured": true,
+      "year": "2023",
+      "metrics": {
+        "engine": "Web Audio API / Ambisonics 3rd Order",
+        "samples": "Sub-millisecond jitter",
+        "users": "85,000+ producers"
+      },
+      "tags": ["Web Audio API", "Three.js", "AudioWorklets", "React", "DSP", "Vanilla CSS"],
+      "shortDesc": "An intoxicating generative sound laboratory mapping frequency spectrums into 3D reactive particle meshes and binaural head-tracked spaces.",
+      "overview": "Auralis brings professional spatial audio engineering directly to the web with zero plugins, allowing musicians and game designers to position sound sources in spherical 3D space.",
+      "challenge": "Achieving sample-accurate DSP timing and low audio latency while simultaneously rendering 60,000 audio-reactive particle points on GPU.",
+      "solution": "Created custom AudioWorklet processors running on dedicated audio threads paired with WebGL instanced geometry shaders driven by shared audio buffer telemetry.",
+      "achievements": [
+        "Nominated for Webby Award in Experimental Web Experiences",
+        "Used by soundtrack composers for indie game releases",
+        "99.8% crash-free session stability across all major browsers"
+      ],
+      "liveUrl": "https://auralis-spatial.demo",
+      "githubUrl": "https://github.com/auravance/auralis-spatial"
+    },
+    {
+      "id": "cyber-vault-protocol",
+      "title": "Neo-Vault Prime Protocol",
+      "subtitle": "Biometric Web3 Multi-Signature Asset Interface & Security Console",
+      "category": "Fintech / Web3",
+      "imageKey": "cyberVault",
+      "featured": true,
+      "year": "2023",
+      "metrics": {
+        "tvl": "$131M+ Assets Secured",
+        "audits": "Double Tier-1 Smart Contract Audit",
+        "security": "Zero vulnerabilities"
+      },
+      "tags": ["Solidity", "Ethers.js", "React", "WebAuthn / Passkeys", "TypeScript", "Tailwind/CSS"],
+      "shortDesc": "Next-generation institutional treasury dashboard with hardware-grade biometric passkey authentication and interactive multi-party approval workflows.",
+      "overview": "Combining cyberpunk luxury visual polish with impenetrable cryptographic safety protocols, Neo-Vault Prime redefines high-value decentralized custody.",
+      "challenge": "Simplifying complex multi-signature threshold cryptography and gas simulation into a seamless, high-confidence executive user experience.",
+      "solution": "Designed biometric WebAuthn integration paired with transaction simulation sandboxes that visualize fund movements and state changes before on-chain execution.",
+      "achievements": [
+        "Secured over $131 million across 4 EVM chains without incident",
+        "Featured on CoinDesk and Decrypt for groundbreaking UX standards",
+        "Cut user signing error rate to essentially 0%"
+      ],
+      "liveUrl": "https://neo-vault-prime.demo",
+      "githubUrl": "https://github.com/auravance/neo-vault-prime"
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "id": "frontend",
+        "title": "Frontend & Creative Engineering",
+        "description": "Crafting butter-smooth 60fps interactive surfaces and modular design systems.",
+        "skills": [
+          { "name": "React 19 & Next.js", "level": 98, "tag": "Primary" },
+          { "name": "TypeScript / Modern ES6+", "level": 96, "tag": "Expert" },
+          { "name": "Vanilla CSS & Modern Layouts", "level": 99, "tag": "Artisan" },
+          { "name": "Canvas 2D / WebGL / Three.js", "level": 88, "tag": "Spatial" },
+          { "name": "State Machines & Reactive Architecture", "level": 94, "tag": "System" },
+          { "name": "Performance Tuning & Web Vitals", "level": 95, "tag": "Audit" }
+        ]
+      },
+      {
+        "id": "backend",
+        "title": "Backend & Cloud Infrastructure",
+        "description": "Building fault-tolerant microservices, streaming endpoints, and high-throughput pipelines.",
+        "skills": [
+          { "name": "Node.js / Express / Fastify", "level": 94, "tag": "Server" },
+          { "name": "Python / FastAPI / AsyncIO", "level": 91, "tag": "Backend" },
+          { "name": "PostgreSQL & Prisma ORM", "level": 92, "tag": "Database" },
+          { "name": "Redis & Caching Invalidation", "level": 90, "tag": "Memory" },
+          { "name": "WebSockets & Event-Driven Architecture", "level": 93, "tag": "Realtime" },
+          { "name": "Docker & Edge Workers (Cloudflare / AWS)", "level": 89, "tag": "DevOps" }
+        ]
+      },
+      {
+        "id": "aiCreative",
+        "title": "Generative AI & Emerging Media",
+        "description": "Deploying frontier neural pipelines, multi-agent frameworks, and sensory audio/visuals.",
+        "skills": [
+          { "name": "LLM Orchestration & Agent Loops", "level": 95, "tag": "Frontier" },
+          { "name": "Vector Databases & Semantic Search", "level": 90, "tag": "RAG" },
+          { "name": "Web Audio API & Interactive Synthesis", "level": 87, "tag": "Sensory" },
+          { "name": "Figma-to-Code & Design Tokens", "level": 96, "tag": "Design" },
+          { "name": "Prompt Engineering & Evaluation Suites", "level": 92, "tag": "Evals" },
+          { "name": "Smart Contracts & WebAuthn Security", "level": 85, "tag": "Web3" }
+        ]
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "creative-dev",
+      "title": "Creative Design Engineering",
+      "subtitle": "01 / Visual & Motion Craft",
+      "description": "Bespoke web experiences that mesmerize visitors with silky animations, bespoke interactions, 3D elements, and flawless responsive execution.",
+      "deliverables": ["Interactive Websites & Microsites", "Design System Engineering", "Custom Shader / Canvas Graphics", "Performance & SEO Maximization"]
+    },
+    {
+      "id": "fullstack-arch",
+      "title": "Full-Stack System Architecture",
+      "subtitle": "02 / Scalable Platforms",
+      "description": "End-to-end web apps designed for durability, from bulletproof TypeScript backends and low-latency databases to reactive frontends.",
+      "deliverables": ["SaaS Application Development", "High-Throughput REST & GraphQL APIs", "Real-Time Streaming Systems", "Cloudflare Edge Deployments"]
+    },
+    {
+      "id": "ai-solutions",
+      "title": "Agentic AI & Workflow Canvases",
+      "subtitle": "03 / Generative Intelligence",
+      "description": "Bridging powerful language and diffusion models into human-friendly interactive visual workspaces with instant feedback loops.",
+      "deliverables": ["Custom LLM Agent Architectures", "Vector Retrieval & Knowledge RAG", "Interactive Canvas UIs", "Automated Evaluation Frameworks"]
+    },
+    {
+      "id": "advisory",
+      "title": "Technical Advisory & Audits",
+      "subtitle": "04 / Leadership & Strategy",
+      "description": "High-level guidance for seed-stage to Series B engineering teams on frontend ergonomics, animation pipelines, and architecture roadmaps.",
+      "deliverables": ["Codebase Performance Audits", "Frontend Architecture Blueprints", "Hiring & Interview Calibration", "Team Workshops on Motion Web"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Staff Creative Engineer & Architect",
+      "company": "Hyperion Labs",
+      "period": "2024 — Present",
+      "location": "San Francisco, CA (Hybrid)",
+      "badge": "Current Role",
+      "description": "Leading the core creative engineering cell building next-generation human-AI collaboration tools and generative workspaces.",
+      "highlights": [
+        "Spearheaded redesign of the spatial canvas engine, cutting memory consumption by 45%",
+        "Mentored a cross-functional squad of 11 engineers and product designers in motion design and accessibility",
+        "Architected real-time WebSocket protocol supporting 10,000 concurrent multiplayer canvas users"
+      ],
+      "technologies": ["React 19", "TypeScript", "WebSockets", "Rust / WASM", "WebGL"]
+    },
+    {
+      "role": "Senior Full-Stack Technologist",
+      "company": "Nexus Interactive",
+      "period": "2022 — 2024",
+      "location": "Remote / New York",
+      "badge": "2 Years",
+      "description": "Developed interactive 3D product showcases, financial dashboards, and edge-rendered web applications for enterprise clients.",
+      "highlights": [
+        "Delivered 14 bespoke commercial web experiences with an average Google Lighthouse performance score of 98+",
+        "Introduced automated visual regression and motion testing pipelines across the engineering organization",
+        "Received three international web awards for exceptional interface craft"
+      ],
+      "technologies": ["Next.js", "Three.js", "Node.js", "PostgreSQL", "Tailwind/CSS", "AWS"]
+    },
+    {
+      "role": "Full-Stack Design Engineer",
+      "company": "Voxel Matrix Studio",
+      "period": "2020 — 2022",
+      "location": "San Francisco, CA",
+      "badge": "2 Years",
+      "description": "Built reactive web applications, interactive audio synthesis tools, and crypto treasury consoles.",
+      "highlights": [
+        "Crafted custom Web Audio DSP synthesizer with real-time waveform visualizers",
+        "Engineered zero-dependency micro-interaction system adopted by 5 product lines",
+        "Collaborated directly with founders to translate brand identities into interactive web physics"
+      ],
+      "technologies": ["React", "Web Audio API", "Express", "MongoDB", "CSS Modules"]
+    },
+    {
+      "role": "Frontend Software Engineer",
+      "company": "Studio Aurora",
+      "period": "2018 — 2020",
+      "location": "Seattle, WA",
+      "badge": "2 Years",
+      "description": "Built foundational responsive interfaces, microservices, and component libraries for high-traffic media brands.",
+      "highlights": [
+        "Engineered modular UI kit used across 20+ consumer websites",
+        "Optimized mobile assets and critical rendering paths, improving load times by 2.4 seconds"
+      ],
+      "technologies": ["JavaScript ES6+", "HTML5/CSS3", "React", "REST APIs", "Webpack"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.S. in Computer Science & Human-Computer Interaction",
+      "institution": "University of California, Berkeley",
+      "period": "2014 — 2018",
+      "notes": "Graduated Magna Cum Laude • President of Creative Computing Society"
+    },
+    {
+      "degree": "Advanced Interactive Computer Graphics & Shaders",
+      "institution": "MIT OpenCourseWare / ShaderToy Lab",
+      "period": "2020",
+      "notes": "Specialization in raymarching, GLSL, and low-level GPU rasterization"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Aura is that rare 1-in-a-million technologist who can write bulletproof distributed systems and simultaneously craft animations that make users stop and say 'WOW'. Working with Aura redefined our product's trajectory.",
+      "author": "Dr. Elena Rostova",
+      "title": "VP of Engineering",
+      "company": "Aetheris AI",
+      "rating": 5
+    },
+    {
+      "quote": "The speed and craft Aura brought to our telemetry dashboard was breathtaking. The WebGL globe and real-time streaming pipeline ran without a stutter on day one.",
+      "author": "Marcus Sterling",
+      "title": "Chief Technology Officer",
+      "company": "Aethelred Global",
+      "rating": 5
+    },
+    {
+      "quote": "Unmatched aesthetic precision. If you need a digital experience that looks like it stepped out of the year 2035, Aura is the architect you want on your side.",
+      "author": "Seraphina Lin",
+      "title": "Principal Product Designer",
+      "company": "Voxel Media Group",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is your typical project engagement structure?",
+      "a": "I work on both fixed-scope architectural builds (2-8 weeks for high-impact MVPs/microsites) and embedded staff-level engineering retainers for select tech teams."
+    },
+    {
+      "q": "Can you handle both UI design and full-stack code?",
+      "a": "Yes! I pride myself on bridging design engineering and production architecture. I frequently take projects from blank Figma canvas through database schema, API design, animations, and zero-downtime deployment."
+    },
+    {
+      "q": "What timezone do you operate in?",
+      "a": "Based in Pacific Time (San Francisco, UTC-7/8), with flexible collaboration hours accommodating teams across North America, Europe, and Asia-Pacific."
+    },
+    {
+      "q": "How can we kick off a collaboration?",
+      "a": "Use the contact page form or email me directly at aura.vance.dev@gmail.com with a brief summary of your timeline and goals. I usually reply within 24 hours."
+    }
+  ]
+}
