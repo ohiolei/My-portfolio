@@ -247,7 +247,7 @@
         "mobileTraffic": "78% Mobile Users",
         "experience": "Interactive 3D Booking"
       },
-      "tags": ["Vue", "Next.js", "Tailwind CSS", "Stripe Checkout", "Smooth Motion"],
+      "tags": ["Vue", "Nuxt.js", "Tailwind CSS", "Stripe Checkout", "Smooth Motion"],
       "shortDesc": "Vibrant consumer entertainment platform featuring event bookings, interactive ticketing, media showcases, and customer engagement.",
       "overview": "Fast and Fun delivers an exciting, high-energy digital brand presence for extreme sports and recreational entertainment in Canada.",
       "challenge": "Creating an exhilarating visual design that captures real-world adrenaline while keeping checkout friction down to under 60 seconds.",
@@ -278,7 +278,7 @@
       "shortDesc": "Intelligent AI assistant platform powered by modern LLMs for automated copywriting, code generation, creative reasoning, and workflow acceleration.",
       "overview": "Wizard AI leverages generative deep learning to automate repetitive developer and content workflows through a sleek, responsive conversational interface.",
       "challenge": "Implementing seamless token streaming and markdown code syntax highlighting without rendering bottlenecks.",
-      "solution": "Utilized Next.js Edge Runtime with streaming response pipelines and client-side syntax highlighting.",
+      "solution": "Utilized Nuxt.js Edge Runtime with streaming response pipelines and client-side syntax highlighting.",
       "achievements": [
         "Open-sourced on GitHub with clean developer documentation",
         "Integrated multi-model prompt switching and conversation history persistence",
