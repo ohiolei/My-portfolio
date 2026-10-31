@@ -542,12 +542,17 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(circle at 50% 35%, #1f293d 0%, #080c18 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatar-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.5s ease;
 }
 
@@ -1609,12 +1614,14 @@
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  background: radial-gradient(circle at 50% 35%, #1f293d 0%, #080c18 100%);
 }
 
 .about-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .about-photo-overlay {

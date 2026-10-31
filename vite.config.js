@@ -8,17 +8,4 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  resolve: {
-    alias: {
-      '@artifacts': 'C:/Users/Surface Pro8/.gemini/antigravity-ide/brain/b9963fae-c543-4147-8a95-80e35c94545b'
-    }
-  },
-  server: {
-    fs: {
-      allow: [
-        'c:/laragon/www/my-portfolio',
-        'C:/Users/Surface Pro8/.gemini/antigravity-ide/brain/b9963fae-c543-4147-8a95-80e35c94545b'
-      ]
-    }
-  }
 })

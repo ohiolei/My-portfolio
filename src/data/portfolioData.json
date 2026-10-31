@@ -1,55 +1,48 @@
 {
   "personal": {
-    "name": "Aura Vance",
-    "nickname": "aura.sys",
-    "title": "New-Age Creative Technologist & Full-Stack Architect",
-    "tagline": "Architecting hyper-fluid digital experiences, generative agent canvases, and sensory web systems.",
-    "availabilityStatus": "Available for select Q4/Q1 contracts & high-impact roles",
-    "location": "San Francisco, CA & Global Remote",
-    "email": "aura.vance.dev@gmail.com",
-    "phone": "+1 (415) 890-4421",
-    "yearsOfExperience": 8,
+    "name": "Oluwatobiloba Williams",
+    "nickname": "tobiloba.sys",
+    "title": "Senior Full-Stack Engineer & Systems Architect",
+    "tagline": "Architecting high-availability institutional portals, secure e-governance systems, and fluid modern web applications.",
+    "availabilityStatus": "Available for select high-impact engineering contracts & lead roles",
+    "location": "Lagos & Global Remote",
+    "email": "oluwatobiloba.williams.dev@gmail.com",
+    "phone": "+234 (0) 812-456-7890",
+    "yearsOfExperience": 7,
     "avatarKey": "avatar",
-    "bioSummary": "A craft-obsessed creative engineer sitting at the razor-sharp nexus of generative intelligence, spatial interfaces, and reactive distributed systems.",
+    "bioSummary": "A seasoned full-stack engineer and web systems architect with a proven track record of engineering mission-critical university portals, secure e-voting networks, and high-conversion web applications.",
     "bioParagraphs": [
-      "I bridge the gap between speculative design and rock-solid production code. Over the last 8 years, I have architected web systems and sensory interfaces for venture-backed startups, research labs, and frontier AI companies.",
-      "My work is rooted in buttery 60fps micro-interactions, mathematically rigorous typography, kinetic layout engines, and zero-compromise developer ergonomics.",
-      "When I step away from the IDE, you will find me experimenting with modular analog synths, contributing to open-source shaders, and analyzing brutalist architecture."
+      "I specialize in engineering robust, high-traffic digital ecosystems from conceptual architecture to high-availability deployment. Over the years, I have architected and maintained flagship university portals, digital learning management systems (TASCE LMS), and student information gateways handling hundreds of thousands of active users and millions in transactions.",
+      "My engineering ethos merges scalable database schemas, high-throughput server runtimes, and resilient API gateways with modern, buttery 60fps user interfaces.",
+      "Whether developing multi-tier institutional administrative hubs, tamper-evident collegiate e-voting platforms, or cutting-edge AI assistant workflows (Wizard AI), I build for scale, security, and exceptional user experience."
     ],
     "socials": [
       {
         "id": "github",
         "name": "GitHub",
-        "url": "https://github.com",
-        "handle": "@auravance",
+        "url": "https://github.com/Jhon-crypt",
+        "handle": "@Jhon-crypt",
         "accent": "#00f0ff"
       },
       {
         "id": "linkedin",
         "name": "LinkedIn",
         "url": "https://linkedin.com",
-        "handle": "in/aura-vance",
+        "handle": "in/oluwatobiloba-williams",
         "accent": "#0077b5"
       },
       {
         "id": "twitter",
         "name": "X / Twitter",
         "url": "https://x.com",
-        "handle": "@aura_vance",
+        "handle": "@tobiloba_dev",
         "accent": "#ff007f"
-      },
-      {
-        "id": "dribbble",
-        "name": "Dribbble",
-        "url": "https://dribbble.com",
-        "handle": "auravance",
-        "accent": "#ea4c89"
       },
       {
         "id": "discord",
         "name": "Discord",
         "url": "https://discord.com",
-        "handle": "auratech#0001",
+        "handle": "tobiloba#0001",
         "accent": "#5865f2"
       }
     ]
@@ -438,43 +431,43 @@
   ],
   "testimonials": [
     {
-      "quote": "Aura is that rare 1-in-a-million technologist who can write bulletproof distributed systems and simultaneously craft animations that make users stop and say 'WOW'. Working with Aura redefined our product's trajectory.",
-      "author": "Dr. Elena Rostova",
-      "title": "VP of Engineering",
-      "company": "Aetheris AI",
+      "quote": "Tobiloba is that rare 1-in-a-million engineer who can architect bulletproof enterprise database systems and simultaneously deliver interfaces that users love. His work on our institutional portals completely elevated our digital infrastructure.",
+      "author": "Dr. O. Adeleke",
+      "title": "Director of ICT & Academic Computing",
+      "company": "Institutional Systems",
       "rating": 5
     },
     {
-      "quote": "The speed and craft Aura brought to our telemetry dashboard was breathtaking. The WebGL globe and real-time streaming pipeline ran without a stutter on day one.",
-      "author": "Marcus Sterling",
-      "title": "Chief Technology Officer",
-      "company": "Aethelred Global",
+      "quote": "The speed, reliability, and security Tobiloba brought to our e-voting and portal pipelines was exceptional. Handling peak election and registration traffic without a hitch made all the difference.",
+      "author": "Engr. Kenneth M.",
+      "title": "Chief Technology Consultant",
+      "company": "EduTech Solutions",
       "rating": 5
     },
     {
-      "quote": "Unmatched aesthetic precision. If you need a digital experience that looks like it stepped out of the year 2035, Aura is the architect you want on your side.",
-      "author": "Seraphina Lin",
-      "title": "Principal Product Designer",
-      "company": "Voxel Media Group",
+      "quote": "Unmatched precision and dedication. Whether building high-converting event platforms or deploying AI applications, Oluwatobiloba is the architect you want leading the engineering effort.",
+      "author": "David C.",
+      "title": "Product Lead",
+      "company": "Fast & Fun Media",
       "rating": 5
     }
   ],
   "faq": [
     {
       "q": "What is your typical project engagement structure?",
-      "a": "I work on both fixed-scope architectural builds (2-8 weeks for high-impact MVPs/microsites) and embedded staff-level engineering retainers for select tech teams."
+      "a": "I work on both fixed-scope architectural builds (custom university portals, LMS platforms, web applications) and long-term technical leadership retainers for engineering teams."
     },
     {
       "q": "Can you handle both UI design and full-stack code?",
-      "a": "Yes! I pride myself on bridging design engineering and production architecture. I frequently take projects from blank Figma canvas through database schema, API design, animations, and zero-downtime deployment."
+      "a": "Yes! I bridge frontend craftsmanship (React, Next.js, modern CSS animations) with backend systems (PHP/Laravel, Node.js, Python, MySQL, Redis, REST APIs, and database optimization)."
     },
     {
-      "q": "What timezone do you operate in?",
-      "a": "Based in Pacific Time (San Francisco, UTC-7/8), with flexible collaboration hours accommodating teams across North America, Europe, and Asia-Pacific."
+      "q": "What is your availability for new projects?",
+      "a": "I am open for select high-leverage software engineering contracts, portal modernizations, and full-stack consulting."
     },
     {
       "q": "How can we kick off a collaboration?",
-      "a": "Use the contact page form or email me directly at aura.vance.dev@gmail.com with a brief summary of your timeline and goals. I usually reply within 24 hours."
+      "a": "Use the contact page form or email me directly at oluwatobiloba.williams.dev@gmail.com with your project overview. I usually respond within 24 hours."
     }
   ]
 }

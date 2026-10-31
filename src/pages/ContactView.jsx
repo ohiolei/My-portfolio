@@ -86,7 +86,7 @@ export default function ContactView({ personal }) {
                 <div className="success-icon-ring">✓</div>
                 <h3 className="success-title font-display">Transmission Received</h3>
                 <p className="success-desc">
-                  Thank you, <strong>{formData.name}</strong>. Your message has been encrypted and routed directly to Aura's priority inbox. You can expect a thoughtful response within 24 hours.
+                  Thank you, <strong>{formData.name}</strong>. Your message has been encrypted and routed directly to {personal.name}'s priority inbox. You can expect a thoughtful response within 24 hours.
                 </p>
                 <button
                   className="btn btn-secondary"

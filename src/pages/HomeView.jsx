@@ -114,7 +114,7 @@ export default function HomeView({ data, onNavigate, onSelectProject }) {
                   <span className="avatar-handle font-mono">{personal.nickname}</span>
                 </div>
                 <div className="avatar-badge-row">
-                  <span className="badge badge-glow">SF & Remote</span>
+                  <span className="badge badge-glow">{personal.location}</span>
                   <span className="badge badge-cyan">Full-Stack Lead</span>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function HomeView({ data, onNavigate, onSelectProject }) {
                 <span>⚡ 60FPS CRAFT</span>
               </div>
               <div className="holo-pill holo-pill-bottom font-mono">
-                <span>✦ 8+ YEARS IN PROD</span>
+                <span>✦ {personal.yearsOfExperience}+ YEARS IN PROD</span>
               </div>
             </Card3DTilt>
           </div>

@@ -32,7 +32,7 @@ export default function Footer({ personal, onNavigate, onOpenJsonModal }) {
         <div className="footer-top-row">
           <div className="footer-brand">
             <div className="brand-logo-inline">
-              <span className="logo-initials font-display">AV</span>
+              <span className="logo-initials font-display">OW</span>
               <span className="logo-beacon" />
               <span className="footer-title font-display">{personal.name}</span>
             </div>

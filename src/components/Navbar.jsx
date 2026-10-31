@@ -68,12 +68,12 @@ export default function Navbar({
             aria-label="Home"
           >
             <div className="logo-glitch-box">
-              <span className="logo-initials">AV</span>
+              <span className="logo-initials">OW</span>
               <span className="logo-beacon" />
             </div>
             <div className="logo-text">
-              <span className="logo-name">AURA VANCE</span>
-              <span className="logo-sub">CREATIVE.SYS</span>
+              <span className="logo-name">O. WILLIAMS</span>
+              <span className="logo-sub">FULLSTACK.SYS</span>
             </div>
           </button>
 
