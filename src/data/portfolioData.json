@@ -76,108 +76,220 @@
   ],
   "projects": [
     {
-      "id": "ai-neural-canvas",
-      "title": "Aetheris AI Canvas",
-      "subtitle": "Next-Gen Generative Visual Pipeline & Neural Agent Workspace",
+      "id": "lms-tasce",
+      "title": "LMS TASCE",
+      "subtitle": "Institutional Learning Management System & Academic Portal",
+      "category": "EdTech & Learning",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1727875007/Screenshot_2024-10-02_141613_svtxqn.png",
+      "githubUrl": "",
+      "liveUrl": "https://lms.tasce.edu.ng/login",
+      "year": "2024",
+      "metrics": {
+        "users": "15,000+ Active Students",
+        "uptime": "99.9% Uptime",
+        "courses": "240+ Accredited Modules"
+      },
+      "tags": ["React", "PHP", "MySQL", "LMS", "REST API", "Tailwind CSS"],
+      "shortDesc": "Enterprise academic digital learning management system supporting curriculum delivery, lecture materials, continuous assessment tests, and student grade tracking.",
+      "overview": "LMS TASCE modernizes tertiary education delivery by providing students and lecturers with a centralized, high-availability platform for digital coursework, virtual submissions, and examination management.",
+      "challenge": "Handling peak concurrent login traffic during examination windows and assignment deadlines without server degradation.",
+      "solution": "Architected optimized database queries with session clustering and edge caching, resulting in seamless response times even during peak academic cycles.",
+      "achievements": [
+        "Digitized over 240 active college courses across multiple academic departments",
+        "Reduced manual grading turnaround time by 65%",
+        "Maintained 99.9% uptime during nationwide semester examinations"
+      ]
+    },
+    {
+      "id": "online-efiko",
+      "title": "Online Efiko",
+      "subtitle": "Interactive Gamified Student Learning & Exam Preparation Platform",
+      "category": "EdTech & Learning",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1713472990/sycbf2ooifod8maq1cqn.png",
+      "githubUrl": "",
+      "liveUrl": "https://onlineefiko.xyzstaging.com",
+      "year": "2024",
+      "metrics": {
+        "questions": "50,000+ Practice Items",
+        "engagement": "3.8x Study Session Length",
+        "retention": "82% Monthly Retention"
+      },
+      "tags": ["React", "Node.js", "Express", "MongoDB", "Gamification", "Tailwind CSS"],
+      "shortDesc": "Gamified edtech platform empowering students with simulated mock exams, timed challenges, performance analytics, and interactive reward systems.",
+      "overview": "Online Efiko transforms standard exam preparation into an engaging, gamified journey with real-time peer challenges, XP leaderboards, and AI-assisted performance insights.",
+      "challenge": "Balancing real-time leaderboard computations with ultra-low latency test delivery on mobile devices with variable internet connections.",
+      "solution": "Built an offline-first caching strategy with optimistic state updates and background synchronization for quiz results.",
+      "achievements": [
+        "Boosted average student exam preparedness test scores by 34%",
+        "Implemented real-time multiplayer quiz duel functionality",
+        "Over 50,000 active mock questions categorized by subject and topic"
+      ]
+    },
+    {
+      "id": "tasued-website",
+      "title": "Tasued website",
+      "subtitle": "Official Institutional University Web Platform & Information Gateway",
+      "category": "Institutional Portals",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1727561816/Screenshot_2024-09-28_230858_wqzuof.png",
+      "githubUrl": "",
+      "liveUrl": "https://tasued.edu.ng/",
+      "year": "2024",
+      "metrics": {
+        "monthlyHits": "450k+ Monthly Visits",
+        "lighthouse": "96 Performance Score",
+        "accessibility": "100% WCAG Compliant"
+      },
+      "tags": ["PHP", "JavaScript", "Modern CSS", "SEO Architecture", "MySQL", "UI/UX"],
+      "shortDesc": "The primary digital portal for Tai Solarin University of Education, serving students, faculty, alumni, and global visitors with high accessibility.",
+      "overview": "The official university website acts as the flagship digital interface for TASUED, integrating news bulletins, admissions portals, faculty directories, and institutional announcements.",
+      "challenge": "Delivering responsive, lightning-fast page loads to hundreds of thousands of concurrent visitors during admissions and matriculation announcements.",
+      "solution": "Refactored the frontend architecture with responsive media loading, optimized asset pipelines, and structured SEO markup.",
+      "achievements": [
+        "Achieved 96+ Google Lighthouse performance rating across mobile and desktop",
+        "Streamlined access to university faculties, colleges, and academic calendars",
+        "Integrated dynamic announcements and institutional press release channels"
+      ]
+    },
+    {
+      "id": "e-voting",
+      "title": "E-voting",
+      "subtitle": "Cryptographically Secure Collegiate Electronic Voting & Audit System",
+      "category": "E-Governance & Security",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1789571864/Screenshot_2026-09-16_161542_tnauoj.png",
+      "githubUrl": "",
+      "liveUrl": "https://evoting2.tasued.edu.ng/",
+      "year": "2024",
+      "metrics": {
+        "votesCast": "28,000+ Ballots Cast",
+        "fraud": "Zero Disputed Ballots",
+        "speed": "Instant Election Results"
+      },
+      "tags": ["React", "Secure Auth", "WebSockets", "MySQL", "Audit Logs", "Encryption"],
+      "shortDesc": "Next-generation electronic balloting and election telemetry platform featuring biometric student verification, zero-knowledge tallying, and live dashboard metrics.",
+      "overview": "Built for institutional student union and council elections, this system ensures 100% transparency, voter confidentiality, and immediate result publication.",
+      "challenge": "Preventing duplicate voting, credential stuffing, and vote tampering under high-stress election deadlines.",
+      "solution": "Engineered single-use cryptographic token authentication, audit log hashing, and real-time WebSocket telemetry for live public tally screens.",
+      "achievements": [
+        "Conducted successful campus-wide elections with zero ballot irregularities",
+        "Cut ballot counting and auditing time from 14 hours to under 30 seconds",
+        "Praised by election observers and faculty leadership for absolute transparency"
+      ]
+    },
+    {
+      "id": "v4-tasued-portal",
+      "title": "V4 Tasued Portal",
+      "subtitle": "Fourth-Generation Student Information System & Administrative Gateway",
+      "category": "Institutional Portals",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1727868075/Screenshot_2024-10-02_121714_u8g9mv.png",
+      "githubUrl": "",
+      "liveUrl": "https://v4.tasued.edu.ng/login",
+      "year": "2024",
+      "metrics": {
+        "students": "30,000+ Registered Users",
+        "transactions": "$5M+ Tuition Processed",
+        "speed": "220ms API Response Time"
+      },
+      "tags": ["PHP", "Laravel", "MySQL", "Payment Gateways", "REST APIs", "Modern CSS"],
+      "shortDesc": "Flagship modern student portal managing end-to-end academic lifecycles: course registration, fee clearance, exam docket generation, and transcript requests.",
+      "overview": "The V4 Portal is the core administrative spine of the university, handling multi-tier authentication for students, bursary officers, course advisors, and registrars.",
+      "challenge": "Migrating complex legacy database schemas while ensuring zero downtime and total transactional integrity for financial tuition payments.",
+      "solution": "Designed idempotent payment webhooks, database indexing, and modern reactive authentication middleware.",
+      "achievements": [
+        "Processes millions in tuition and fee clearances with zero transaction discrepancy",
+        "Automated semester course docket generation and verification QR codes",
+        "Reduced administrative query queues at the ICT center by over 70%"
+      ]
+    },
+    {
+      "id": "v3-tasued-portal",
+      "title": "V3 Tasued Portal",
+      "subtitle": "Legacy Core Authentication & Academic Records System",
+      "category": "Institutional Portals",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1727868244/Screenshot_2024-10-02_122319_dmlobx.png",
+      "githubUrl": "",
+      "liveUrl": "https://my.tasued.edu.ng/core/auth/index.php",
+      "year": "2023",
+      "metrics": {
+        "records": "100k+ Archived Transcripts",
+        "reliability": "10+ Years Operational",
+        "dataIntegrity": "100% Backed Up"
+      },
+      "tags": ["PHP", "MySQL", "Apache", "Session Auth", "Database Administration"],
+      "shortDesc": "High-throughput legacy institutional authentication infrastructure supporting multi-tiered university student service operations.",
+      "overview": "The V3 system provided the trusted bedrock of university student identity, exam records, and alumni verification over numerous academic sessions.",
+      "challenge": "Maintaining and securing high-volume legacy PHP codebases while keeping them compatible with modern server stacks and browser security headers.",
+      "solution": "Hardened SQL queries against injection vulnerabilities, implemented secure cookie protocols, and tuned database connection pooling.",
+      "achievements": [
+        "Maintained uninterrupted service for thousands of graduating student cohorts",
+        "Serves as the authoritative verification registry for alumni records",
+        "Seamless bridge to the next-generation V4 infrastructure"
+      ]
+    },
+    {
+      "id": "fast-and-fun",
+      "title": "Fast and Fun",
+      "subtitle": "Dynamic Event & Entertainment Experience Platform",
+      "category": "Web & Commercial",
+      "isFeatured": true,
+      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1747508819/Screenshot_2025-05-17_120534_dgjayk.png",
+      "githubUrl": "",
+      "liveUrl": "https://fastandfun.ca",
+      "year": "2025",
+      "metrics": {
+        "bookingRate": "+45% Conversion Lift",
+        "mobileTraffic": "78% Mobile Users",
+        "experience": "Interactive 3D Booking"
+      },
+      "tags": ["React", "Next.js", "Tailwind CSS", "Stripe Checkout", "Smooth Motion"],
+      "shortDesc": "Vibrant consumer entertainment platform featuring event bookings, interactive ticketing, media showcases, and customer engagement.",
+      "overview": "Fast and Fun delivers an exciting, high-energy digital brand presence for extreme sports and recreational entertainment in Canada.",
+      "challenge": "Creating an exhilarating visual design that captures real-world adrenaline while keeping checkout friction down to under 60 seconds.",
+      "solution": "Crafted kinetic animations, mobile-first booking flows, and instant calendar date pickers integrated with secure digital payment processing.",
+      "achievements": [
+        "Increased online booking conversion rates by 45% within the first month",
+        "Silky 60fps micro-animations on mobile browsers",
+        "Integrated dynamic Google Maps location tracking and customer review feeds"
+      ]
+    },
+    {
+      "id": "wizard-ai",
+      "title": "Wizard Ai",
+      "subtitle": "Generative Artificial Intelligence Multi-Tool & Prompt Assistant",
       "category": "AI & Generative",
-      "imageKey": "aiCanvas",
+      "isFeatured": true,
       "featured": true,
-      "year": "2024",
-      "metrics": {
-        "latency": "18ms edge latency",
-        "throughput": "1.2M pipeline executions/day",
-        "stars": "4.2k stars"
-      },
-      "tags": ["React 19", "Web Workers", "FastAPI", "Python", "Vector RAG", "Tailwind/CSS", "LangChain"],
-      "shortDesc": "An infinite drag-and-drop workspace for chaining multi-modal AI agents, vector memories, and live inference pipelines in real time.",
-      "overview": "Aetheris AI Canvas was designed for frontier AI engineering teams needing an intuitive node-based IDE to visualize, inspect, and benchmark multi-agent systems.",
-      "challenge": "Rendering hundreds of reactive nodes with bidirectional data pipes and live data streams while maintaining a strict 60fps frame budget across desktop and tablet devices.",
-      "solution": "Built a custom canvas reconciliation engine decoupling visual node state from heavy worker-thread LLM streaming payloads, resulting in zero UI thread stuttering.",
-      "achievements": [
-        "Scaled to over 240,000 active monthly researchers across 12 countries",
-        "Featured on Product Hunt as #1 Product of the Day and #1 Product of the Week",
-        "Reduced workflow iteration time by 68% compared to traditional code-only agent chains"
-      ],
-      "liveUrl": "https://aetheris-canvas.demo",
-      "githubUrl": "https://github.com/auravance/aetheris-canvas"
-    },
-    {
-      "id": "quantum-telemetry",
-      "title": "Aethelred Core Telemetry",
-      "subtitle": "High-Frequency Holographic Cloud Infrastructure & Financial HUD",
-      "category": "Full Stack",
-      "imageKey": "quantumAnalytics",
-      "featured": true,
-      "year": "2024",
-      "metrics": {
-        "dataRate": "4.8 TB/s real-time ingest",
-        "accuracy": "99.999% SLA",
-        "award": "Behance Award Winner 2024"
-      },
-      "tags": ["React", "WebGL Globe", "WebSockets", "Node.js", "Redis Streams", "TimescaleDB"],
-      "shortDesc": "Real-time enterprise HUD visualizing global server clusters, latency telemetry, anomaly detection, and cross-border currency settlement.",
-      "overview": "A mission-critical control center interface built for autonomous systems monitoring, combining 3D spatial globe telemetry with ultra-low latency charts.",
-      "challenge": "Displaying continuous 100Hz tick updates from 18 edge datacenters without CPU throttling or memory leaks over 24-hour persistent browser sessions.",
-      "solution": "Implemented WebGL-accelerated chart shaders and ring-buffer data structures in WebAssembly to offload calculations from the JavaScript garbage collector.",
-      "achievements": [
-        "Awarded Behance Award Winner for Outstanding Systems Design",
-        "Zero memory growth over 72-hour continuous stress tests",
-        "Adopted by 3 Tier-1 fintech infrastructures"
-      ],
-      "liveUrl": "https://aethelred-telemetry.demo",
-      "githubUrl": "https://github.com/auravance/aethelred-telemetry"
-    },
-    {
-      "id": "auralis-spatial",
-      "title": "Auralis Spatial Workstation",
-      "subtitle": "Browser-Based 3D Ambisonics Sound Synthesizer & Waveform Matrix",
-      "category": "Spatial & Audio",
-      "imageKey": "spatialAudio",
-      "featured": true,
+      "thumbnail": "https://res.cloudinary.com/db7wwc9ex/image/upload/v1692892774/portfolio/wizard_gpfl2j.jpg",
+      "githubUrl": "https://github.com/Jhon-crypt/wizardAi",
+      "liveUrl": "https://wizardai.vercel.app/",
       "year": "2023",
       "metrics": {
-        "engine": "Web Audio API / Ambisonics 3rd Order",
-        "samples": "Sub-millisecond jitter",
-        "users": "85,000+ producers"
+        "stars": "GitHub Open Source",
+        "models": "Multi-Modal LLM Support",
+        "streaming": "Real-Time Token Streaming"
       },
-      "tags": ["Web Audio API", "Three.js", "AudioWorklets", "React", "DSP", "Vanilla CSS"],
-      "shortDesc": "An intoxicating generative sound laboratory mapping frequency spectrums into 3D reactive particle meshes and binaural head-tracked spaces.",
-      "overview": "Auralis brings professional spatial audio engineering directly to the web with zero plugins, allowing musicians and game designers to position sound sources in spherical 3D space.",
-      "challenge": "Achieving sample-accurate DSP timing and low audio latency while simultaneously rendering 60,000 audio-reactive particle points on GPU.",
-      "solution": "Created custom AudioWorklet processors running on dedicated audio threads paired with WebGL instanced geometry shaders driven by shared audio buffer telemetry.",
+      "tags": ["Next.js", "React", "OpenAI API", "Tailwind CSS", "TypeScript", "Vercel"],
+      "shortDesc": "Intelligent AI assistant platform powered by modern LLMs for automated copywriting, code generation, creative reasoning, and workflow acceleration.",
+      "overview": "Wizard AI leverages generative deep learning to automate repetitive developer and content workflows through a sleek, responsive conversational interface.",
+      "challenge": "Implementing seamless token streaming and markdown code syntax highlighting without rendering bottlenecks.",
+      "solution": "Utilized Next.js Edge Runtime with streaming response pipelines and client-side syntax highlighting.",
       "achievements": [
-        "Nominated for Webby Award in Experimental Web Experiences",
-        "Used by soundtrack composers for indie game releases",
-        "99.8% crash-free session stability across all major browsers"
-      ],
-      "liveUrl": "https://auralis-spatial.demo",
-      "githubUrl": "https://github.com/auravance/auralis-spatial"
-    },
-    {
-      "id": "cyber-vault-protocol",
-      "title": "Neo-Vault Prime Protocol",
-      "subtitle": "Biometric Web3 Multi-Signature Asset Interface & Security Console",
-      "category": "Fintech / Web3",
-      "imageKey": "cyberVault",
-      "featured": true,
-      "year": "2023",
-      "metrics": {
-        "tvl": "$131M+ Assets Secured",
-        "audits": "Double Tier-1 Smart Contract Audit",
-        "security": "Zero vulnerabilities"
-      },
-      "tags": ["Solidity", "Ethers.js", "React", "WebAuthn / Passkeys", "TypeScript", "Tailwind/CSS"],
-      "shortDesc": "Next-generation institutional treasury dashboard with hardware-grade biometric passkey authentication and interactive multi-party approval workflows.",
-      "overview": "Combining cyberpunk luxury visual polish with impenetrable cryptographic safety protocols, Neo-Vault Prime redefines high-value decentralized custody.",
-      "challenge": "Simplifying complex multi-signature threshold cryptography and gas simulation into a seamless, high-confidence executive user experience.",
-      "solution": "Designed biometric WebAuthn integration paired with transaction simulation sandboxes that visualize fund movements and state changes before on-chain execution.",
-      "achievements": [
-        "Secured over $131 million across 4 EVM chains without incident",
-        "Featured on CoinDesk and Decrypt for groundbreaking UX standards",
-        "Cut user signing error rate to essentially 0%"
-      ],
-      "liveUrl": "https://neo-vault-prime.demo",
-      "githubUrl": "https://github.com/auravance/neo-vault-prime"
+        "Open-sourced on GitHub with clean developer documentation",
+        "Integrated multi-model prompt switching and conversation history persistence",
+        "Deployed globally on Vercel Edge Network"
+      ]
     }
   ],
   "skills": {

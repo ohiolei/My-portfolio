@@ -1,122 +1,151 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import portfolioData from './data/portfolioData.json';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import AmbientCanvas from './components/AmbientCanvas';
+import CustomCursor from './components/CustomCursor';
+import ProjectModal from './components/ProjectModal';
+import JsonDataModal from './components/JsonDataModal';
+
+// Pages
+import HomeView from './pages/HomeView';
+import ProjectsView from './pages/ProjectsView';
+import SkillsView from './pages/SkillsView';
+import ExperienceView from './pages/ExperienceView';
+import AboutView from './pages/AboutView';
+import ContactView from './pages/ContactView';
+
+import './App.css';
+
+function getInitialPage() {
+  if (typeof window !== 'undefined') {
+    const hash = window.location.hash.replace('#', '');
+    const validPages = ['home', 'projects', 'skills', 'experience', 'about', 'contact'];
+    if (validPages.includes(hash)) return hash;
+  }
+  return 'home';
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activePage, setActivePage] = useState(getInitialPage);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isJsonModalOpen, setIsJsonModalOpen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('cyber');
+
+  // Sync hash routing and browser back/forward buttons
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      const validPages = ['home', 'projects', 'skills', 'experience', 'about', 'contact'];
+      if (validPages.includes(hash)) {
+        setActivePage(hash);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Update URL hash when page changes
+  const navigateTo = (pageId) => {
+    setActivePage(pageId);
+    window.location.hash = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      {/* Interactive Background Canvas */}
+      <AmbientCanvas />
 
-      <div className="ticks"></div>
+      {/* Ambient Neon Glow Orbs */}
+      <div className="ambient-glow-mesh" aria-hidden="true">
+        <div className="glow-orb glow-orb-1" />
+        <div className="glow-orb glow-orb-2" />
+        <div className="glow-orb glow-orb-3" />
+      </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Reactive Custom Cursor */}
+      <CustomCursor />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      {/* Sticky Glass Navbar */}
+      <Navbar
+        activePage={activePage}
+        setActivePage={navigateTo}
+        navLinks={portfolioData.navigation}
+        onOpenJsonModal={() => setIsJsonModalOpen(true)}
+        currentTheme={currentTheme}
+        setTheme={setCurrentTheme}
+      />
+
+      {/* Main Page Content */}
+      <main className="main-content" id="main-content">
+        {activePage === 'home' && (
+          <HomeView
+            data={portfolioData}
+            onNavigate={navigateTo}
+            onSelectProject={setSelectedProject}
+          />
+        )}
+
+        {activePage === 'projects' && (
+          <ProjectsView
+            projects={portfolioData.projects}
+            onSelectProject={setSelectedProject}
+          />
+        )}
+
+        {activePage === 'skills' && (
+          <SkillsView
+            skillsData={portfolioData.skills}
+            servicesData={portfolioData.services}
+            onNavigate={navigateTo}
+          />
+        )}
+
+        {activePage === 'experience' && (
+          <ExperienceView
+            experience={portfolioData.experience}
+            education={portfolioData.education}
+            onNavigate={navigateTo}
+          />
+        )}
+
+        {activePage === 'about' && (
+          <AboutView
+            personal={portfolioData.personal}
+            currentVibe={portfolioData.currentVibe}
+            faq={portfolioData.faq}
+            onNavigate={navigateTo}
+          />
+        )}
+
+        {activePage === 'contact' && (
+          <ContactView personal={portfolioData.personal} />
+        )}
+      </main>
+
+      {/* Global Footer */}
+      <Footer
+        personal={portfolioData.personal}
+        onNavigate={navigateTo}
+        onOpenJsonModal={() => setIsJsonModalOpen(true)}
+      />
+
+      {/* Interactive Project Case Study Modal */}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
+
+      {/* Raw JSON Data Viewer Modal */}
+      {isJsonModalOpen && (
+        <JsonDataModal onClose={() => setIsJsonModalOpen(false)} />
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
