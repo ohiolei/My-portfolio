@@ -1798,16 +1798,16 @@
 }
 
 /* ==========================================================================
-   8. ABOUT VIEW
+   8. ABOUT VIEW (STORY & PHILOSOPHY)
    ========================================================================== */
 
 .about-view {
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 
 .about-story-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.3fr;
+  grid-template-columns: 0.85fr 1.35fr;
   gap: 40px;
   margin-bottom: 60px;
 }
@@ -1819,43 +1819,50 @@
 }
 
 .about-avatar-card {
-  padding: 24px;
+  padding: 26px;
+  border-radius: 24px;
 }
 
 .about-img-box {
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   aspect-ratio: 1;
+  background: #0c1020;
 }
 
 .about-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.about-avatar-card:hover .about-photo {
+  transform: scale(1.03);
 }
 
 .about-photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(10, 13, 26, 0.8) 100%);
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 13, 26, 0.85) 100%);
 }
 
 .about-avatar-details {
-  padding-top: 16px;
+  padding: 18px 6px 4px 6px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .about-name {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-bright);
 }
 
 .about-role {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
@@ -1863,13 +1870,17 @@
   font-size: 0.82rem;
   color: var(--accent-secondary);
   margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .synth-vibe-widget {
-  padding: 30px 32px;
+  padding: 34px 32px;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .synth-header {
@@ -1881,7 +1892,7 @@
 .synth-trigger-btn {
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  padding: 7px 16px;
+  padding: 8px 16px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-glass);
@@ -1924,61 +1935,102 @@
 }
 
 .synth-title {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-bright);
   font-weight: 600;
 }
 
 .synth-artist {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-subtle);
 }
 
+.synth-status {
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  margin-top: 4px;
+}
+
+/* Right Column: Narrative & Principles */
 .about-right-col {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
-.about-bio-card {
-  padding: 44px 44px;
+.narrative-card {
+  padding: 48px 46px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.narrative-heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+}
+
+.narrative-paragraphs {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.bio-p {
+.narrative-p {
   font-size: 1.05rem;
   color: var(--text-main);
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
-.principles-section {
-  margin-top: 60px;
+/* Principles */
+.principles-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+.principles-header {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.principles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .principle-card {
-  padding: 38px 36px;
+  padding: 34px 36px;
+  border-radius: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 24px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.principle-num {
-  font-size: 0.82rem;
-  font-weight: 700;
+.principle-card:hover {
+  transform: translateX(4px);
+  border-color: var(--border-highlight);
+}
+
+.principle-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 44px;
 }
 
 .principle-title {
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-bright);
+  margin-bottom: 8px;
 }
 
 .principle-desc {
@@ -1987,21 +2039,28 @@
   line-height: 1.65;
 }
 
+/* FAQ Accordion List */
 .faq-section {
-  margin-top: 60px;
+  margin-top: 70px;
 }
 
-.faq-accordion {
+.faq-accordion-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 900px;
+  gap: 16px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .faq-item {
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.faq-item.open {
+  border-color: var(--border-highlight);
+  background: rgba(17, 22, 43, 0.85);
 }
 
 .faq-question-btn {
@@ -2009,27 +2068,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 28px;
+  padding: 26px 32px;
   text-align: left;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-bright);
   cursor: pointer;
   background: none;
   border: none;
+  gap: 16px;
 }
 
-.faq-toggle-icon {
-  font-size: 1.35rem;
+.faq-q-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.faq-icon-arrow {
+  font-size: 1.4rem;
   color: var(--accent-secondary);
-  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
-.faq-answer {
-  padding: 0 28px 24px 28px;
-  font-size: 0.95rem;
+.faq-item.open .faq-icon-arrow {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--accent-secondary);
+}
+
+.faq-answer-box {
+  padding: 0 32px 28px 32px;
+}
+
+.faq-answer-text {
+  font-size: 0.98rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* ==========================================================================
@@ -2683,6 +2765,26 @@
 
   .form-card {
     padding: 32px 24px;
+  }
+
+  .narrative-card {
+    padding: 32px 24px;
+  }
+
+  .principle-card {
+    padding: 26px 22px;
+  }
+
+  .synth-vibe-widget {
+    padding: 26px 22px;
+  }
+
+  .faq-question-btn {
+    padding: 20px 22px;
+  }
+
+  .faq-answer-box {
+    padding: 0 22px 20px 22px;
   }
 }
 
