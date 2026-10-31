@@ -169,7 +169,9 @@ function App() {
           <ExperienceView
             experience={portfolioData.experience}
             education={portfolioData.education}
+            portfolioData={portfolioData}
             onNavigate={navigateTo}
+            onNotify={showToast}
           />
         )}
 
@@ -206,6 +208,7 @@ function App() {
         onNavigate={navigateTo}
         personal={portfolioData.personal}
         projects={portfolioData.projects}
+        portfolioData={portfolioData}
         setTheme={setCurrentTheme}
         currentTheme={currentTheme}
         isMuted={isMuted}

@@ -1668,8 +1668,26 @@
   color: var(--text-muted);
 }
 
-.resume-dl-btn {
+.exp-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.resume-dl-btn,
+.resume-preview-btn {
   white-space: nowrap;
+}
+
+.btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin-slow 0.8s linear infinite;
+  display: inline-block;
 }
 
 .timeline-container {

@@ -1,11 +1,43 @@
+import { useState } from 'react';
 import Card3DTilt from '../components/Card3DTilt';
 import { soundManager } from '../utils/audio';
+import { downloadResumePdf, previewResumePdf } from '../utils/pdfResumeBuilder';
+import defaultPortfolioData from '../data/portfolioData.json';
 
-export default function ExperienceView({ experience, education, onNavigate }) {
+export default function ExperienceView({
+  experience,
+  education,
+  onNavigate,
+  portfolioData,
+  onNotify
+}) {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const activeData = portfolioData || defaultPortfolioData;
+
   const handleDownloadResume = () => {
     soundManager.playSuccess();
-    // Simulate resume download or open clean printable view
-    window.print();
+    setIsGenerating(true);
+
+    try {
+      const fileName = `${activeData?.personal?.name?.replace(/\s+/g, '_') || 'Oluwatobiloba_Williams'}_Resume.pdf`;
+      downloadResumePdf(activeData, fileName);
+      onNotify?.(`Compiled & downloaded ${fileName}! 📄✨`);
+    } catch (err) {
+      console.error('Failed to generate PDF:', err);
+      onNotify?.('Error generating PDF resume. Please try again.');
+    } finally {
+      setTimeout(() => setIsGenerating(false), 900);
+    }
+  };
+
+  const handlePreviewResume = () => {
+    soundManager.playClick();
+    try {
+      previewResumePdf(activeData);
+      onNotify?.('Opened vector resume in new tab ↗');
+    } catch (err) {
+      console.error('Failed to preview PDF:', err);
+    }
   };
 
   return (
@@ -29,14 +61,36 @@ export default function ExperienceView({ experience, education, onNavigate }) {
             5+ years building scalable web applications, university ICT systems & instant payment platforms
           </span>
         </div>
-        <button
-          className="btn btn-primary resume-dl-btn"
-          onClick={handleDownloadResume}
-          onMouseEnter={() => soundManager.playHover()}
-        >
-          <span>Print / Export Resume PDF</span>
-          <span>↓</span>
-        </button>
+        <div className="exp-btn-group">
+          <button
+            className="btn btn-secondary resume-preview-btn font-mono"
+            onClick={handlePreviewResume}
+            onMouseEnter={() => soundManager.playHover()}
+            title="Preview generated PDF in a new tab"
+          >
+            <span>Preview PDF</span>
+            <span>↗</span>
+          </button>
+          <button
+            className="btn btn-primary resume-dl-btn font-mono"
+            onClick={handleDownloadResume}
+            disabled={isGenerating}
+            onMouseEnter={() => soundManager.playHover()}
+            title="Build and download official vector PDF resume"
+          >
+            {isGenerating ? (
+              <>
+                <span className="btn-spinner" />
+                <span>Building PDF...</span>
+              </>
+            ) : (
+              <>
+                <span>Download Resume (PDF)</span>
+                <span>↓</span>
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Interactive Vertical Timeline */}

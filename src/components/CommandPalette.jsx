@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { soundManager } from '../utils/audio';
+import { downloadResumePdf } from '../utils/pdfResumeBuilder';
 
 export default function CommandPalette({
   isOpen,
@@ -7,6 +8,7 @@ export default function CommandPalette({
   onNavigate,
   personal,
   projects,
+  portfolioData,
   setTheme,
   currentTheme,
   isMuted,
@@ -75,12 +77,14 @@ export default function CommandPalette({
       }
     },
     {
-      id: 'act-print-resume',
+      id: 'act-download-resume',
       category: 'Actions',
-      title: 'Print / Export Resume PDF',
+      title: 'Download Official Resume (PDF)',
       icon: '📄',
       action: () => {
-        window.print();
+        soundManager.playSuccess();
+        downloadResumePdf(portfolioData || { personal, projects });
+        onNotify?.('Compiled & downloaded official vector PDF resume! 📄✨');
       }
     },
     {
