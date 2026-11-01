@@ -7,6 +7,7 @@ import CustomCursor from './components/CustomCursor';
 import ProjectModal from './components/ProjectModal';
 import CommandPalette from './components/CommandPalette';
 import BackToTop from './components/BackToTop';
+import DigitalMascot from './components/DigitalMascot';
 import { soundManager } from './utils/audio';
 
 // Pages
@@ -200,6 +201,15 @@ function App() {
 
       {/* Floating Back to Top Button */}
       <BackToTop scrollProgress={scrollProgress} />
+
+      {/* Interactive 2D Digital Mascot Companion */}
+      <DigitalMascot
+        activePage={activePage}
+        currentTheme={currentTheme}
+        isMuted={isMuted}
+        onNavigate={navigateTo}
+        onNotify={showToast}
+      />
 
       {/* Command Palette Modal (Ctrl+K / ⌘K) */}
       <CommandPalette

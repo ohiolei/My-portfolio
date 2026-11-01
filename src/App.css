@@ -3113,3 +3113,1020 @@
   }
 }
 
+/* ==========================================================================
+   12. 2.5D DIGITAL MASCOT COMPANION (TOBI.SYS)
+   ========================================================================== */
+
+.digital-mascot-container {
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+  z-index: 994;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  user-select: none;
+  perspective: 950px;
+  perspective-origin: 50% 85%;
+  pointer-events: none; /* Children enable pointer-events */
+  transition: left 2.2s cubic-bezier(0.25, 1, 0.5, 1), bottom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.digital-mascot-container.is-dragging {
+  transition: none !important;
+}
+
+/* 2.5D AVATAR WRAPPER WITH 3D PERSPECTIVE TILT */
+.mascot-avatar-wrapper {
+  position: relative;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  pointer-events: auto;
+  transition: transform 0.16s cubic-bezier(0.25, 1, 0.5, 1), filter var(--transition-fast);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.72));
+}
+
+.mascot-avatar-wrapper:active,
+.is-dragging .mascot-avatar-wrapper {
+  cursor: grabbing !important;
+}
+
+.mascot-avatar-wrapper:hover {
+  filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.85));
+}
+
+/* Ambient Volumetric Backlight Glow */
+.mascot-ambient-glow {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0.5;
+  filter: blur(14px);
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.mascot-avatar-wrapper:hover .mascot-ambient-glow {
+  opacity: 0.88;
+}
+
+.mascot-svg-box {
+  width: 94px;
+  height: 126px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.mascot-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Halo ring behind head */
+.mascot-halo-ring {
+  animation: haloRingSpin 14s linear infinite;
+  transform-origin: 60px 52px;
+}
+
+@keyframes haloRingSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================================
+   2.5D IDLE ORGANIC BREATHING & BODY MOTIONS
+   ======================================================== */
+
+.activity-idle .mascot-torso-group {
+  transform-origin: 60px 85px;
+  animation: torsoBreathe 3.6s ease-in-out infinite;
+}
+
+.activity-idle .mascot-head-group {
+  transform-origin: 60px 58px;
+  animation: headBreathe 3.6s ease-in-out infinite;
+}
+
+.activity-idle .mascot-arm-left {
+  transform-origin: 36px 72px;
+  animation: armIdleSwayLeft 3.6s ease-in-out infinite;
+}
+
+.activity-idle .mascot-arm-right {
+  transform-origin: 84px 72px;
+  animation: armIdleSwayRight 3.6s ease-in-out infinite;
+}
+
+.activity-idle .mascot-ground-shadow {
+  transform-origin: 60px 143px;
+  animation: shadowBreathe 3.6s ease-in-out infinite;
+}
+
+@keyframes torsoBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025, 0.985) translateY(-1px); }
+}
+
+@keyframes headBreathe {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-2px) rotate(1.2deg); }
+}
+
+@keyframes armIdleSwayLeft {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-3.5deg) translateY(-1px); }
+}
+
+@keyframes armIdleSwayRight {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3.5deg) translateY(-1px); }
+}
+
+@keyframes shadowBreathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(0.92, 0.94); opacity: 0.65; }
+}
+
+/* ========================================================
+   2.5D CHIBI LOCOMOTION & ACTIVITIES
+   ======================================================== */
+
+/* 1. WALKING LOCOMOTION (Smooth articulated strides) */
+.activity-walk .mascot-leg-left {
+  transform-origin: 44px 98px;
+  animation: legWalk3DLeft 0.65s ease-in-out infinite alternate;
+}
+
+.activity-walk .mascot-leg-right {
+  transform-origin: 73px 98px;
+  animation: legWalk3DRight 0.65s ease-in-out infinite alternate;
+}
+
+.activity-walk .mascot-arm-left {
+  transform-origin: 36px 72px;
+  animation: armWalk3DLeft 0.65s ease-in-out infinite alternate;
+}
+
+.activity-walk .mascot-arm-right {
+  transform-origin: 84px 72px;
+  animation: armWalk3DRight 0.65s ease-in-out infinite alternate;
+}
+
+.activity-walk .mascot-svg {
+  animation: walkBob3D 0.325s ease-in-out infinite alternate;
+}
+
+@keyframes legWalk3DLeft {
+  0% { transform: rotate(-26deg) translateY(-1px); }
+  100% { transform: rotate(26deg) translateY(2px); }
+}
+
+@keyframes legWalk3DRight {
+  0% { transform: rotate(26deg) translateY(2px); }
+  100% { transform: rotate(-26deg) translateY(-1px); }
+}
+
+@keyframes armWalk3DLeft {
+  0% { transform: rotate(28deg); }
+  100% { transform: rotate(-28deg); }
+}
+
+@keyframes armWalk3DRight {
+  0% { transform: rotate(-28deg); }
+  100% { transform: rotate(28deg); }
+}
+
+@keyframes walkBob3D {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* 2. SPRINTING (Lean forward into 3D space) */
+.activity-run .mascot-avatar-wrapper {
+  transform: rotate(10deg);
+}
+
+.activity-run .mascot-leg-left {
+  transform-origin: 44px 98px;
+  animation: legSprintCycle 0.32s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.activity-run .mascot-leg-right {
+  transform-origin: 73px 98px;
+  animation: legSprintCycle 0.32s cubic-bezier(0.4, 0, 0.6, 1) infinite 0.16s;
+}
+
+.activity-run .mascot-arm-left {
+  transform-origin: 36px 72px;
+  animation: armSprintCycle 0.32s ease-in-out infinite 0.16s;
+}
+
+.activity-run .mascot-arm-right {
+  transform-origin: 84px 72px;
+  animation: armSprintCycle 0.32s ease-in-out infinite;
+}
+
+.activity-run .mascot-svg {
+  animation: runBob3D 0.16s ease-in-out infinite alternate;
+}
+
+@keyframes legSprintCycle {
+  0% { transform: rotate(-44deg) translateY(-3px); }
+  50% { transform: rotate(46deg) translateY(4px); }
+  100% { transform: rotate(-44deg) translateY(-3px); }
+}
+
+@keyframes armSprintCycle {
+  0% { transform: rotate(-52deg); }
+  50% { transform: rotate(52deg); }
+  100% { transform: rotate(-52deg); }
+}
+
+@keyframes runBob3D {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-7px); }
+}
+
+/* 3. HOVERBOARD 2.5D GLIDE */
+.activity-hoverboard .mascot-avatar-wrapper {
+  animation: hoverboardGlide 1.8s ease-in-out infinite alternate;
+}
+
+.activity-hoverboard .thruster-glow {
+  animation: thrusterPulse 0.35s ease-in-out infinite alternate;
+}
+
+.activity-hoverboard .mascot-arm-left {
+  transform: rotate(-28deg);
+}
+
+.activity-hoverboard .mascot-arm-right {
+  transform: rotate(28deg);
+}
+
+@keyframes hoverboardGlide {
+  0% { transform: translateY(-8px) rotate(-3deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+  100% { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes thrusterPulse {
+  0% { opacity: 0.6; transform: scaleY(0.85); }
+  100% { opacity: 1; transform: scaleY(1.4); }
+}
+
+/* 4. JUMP & ACROBATIC LANDING */
+.activity-jump .mascot-avatar-wrapper {
+  animation: mascotJumpCycle 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.activity-jump .mascot-leg-left {
+  transform: rotate(-22deg) translateY(-6px);
+}
+
+.activity-jump .mascot-leg-right {
+  transform: rotate(22deg) translateY(-6px);
+}
+
+.activity-jump .mascot-arm-left {
+  transform: rotate(-65deg);
+}
+
+.activity-jump .mascot-arm-right {
+  transform: rotate(65deg);
+}
+
+@keyframes mascotJumpCycle {
+  0% { transform: scale(1) translateY(0); }
+  25% { transform: scale(1.18, 0.72) translateY(5px); }
+  50% { transform: scale(0.92, 1.25) translateY(-42px) rotate(-6deg); }
+  75% { transform: scale(1.08, 0.95) translateY(-8px) rotate(3deg); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.jump-ripple-ring {
+  animation: rippleExpand 0.7s ease-out forwards;
+  transform-origin: 60px 144px;
+}
+
+@keyframes rippleExpand {
+  0% { opacity: 1; transform: scale(0.4); }
+  100% { opacity: 0; transform: scale(1.6); }
+}
+
+/* 5. CODING ON HOLOGRAPHIC LAPTOP (Ergonomic grounded posture) */
+.activity-code .mascot-torso-group {
+  transform-origin: 60px 85px;
+  transform: rotate(3deg) translateY(1px);
+}
+
+.activity-code .mascot-head-group {
+  transform-origin: 60px 58px;
+  transform: rotate(4deg) translateY(2px);
+}
+
+.activity-code .mascot-leg-left,
+.activity-code .mascot-leg-right {
+  /* Keep legs naturally grounded and solid without detached hip rotations */
+  transform: none !important;
+}
+
+/* Alternating rhythmic typing keystrokes */
+.activity-code .typing-left {
+  animation: typeStaccato 0.16s ease-in-out infinite alternate;
+}
+
+.activity-code .typing-right {
+  animation: typeStaccato 0.16s ease-in-out infinite alternate 0.08s;
+}
+
+@keyframes typeStaccato {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3.5px); }
+}
+
+/* Floating holographic code syntax lines */
+.code-line {
+  animation: codeLinePulse 1.2s ease-in-out infinite alternate;
+}
+.line-c1 { animation-delay: 0.1s; }
+.line-c2 { animation-delay: 0.3s; }
+.line-c3 { animation-delay: 0.5s; }
+.line-c4 { animation-delay: 0.7s; }
+
+@keyframes codeLinePulse {
+  0% { opacity: 0.5; stroke-dasharray: 40; stroke-dashoffset: 8; }
+  100% { opacity: 1; stroke-dasharray: 40; stroke-dashoffset: 0; }
+}
+
+.holo-code-snip-1 {
+  animation: holoFloat1 2s ease-out infinite;
+}
+.holo-code-snip-2 {
+  animation: holoFloat2 2.2s ease-out infinite 0.6s;
+}
+
+@keyframes holoFloat1 {
+  0% { opacity: 0; transform: translateY(4px); }
+  40% { opacity: 0.95; }
+  100% { opacity: 0; transform: translateY(-12px); }
+}
+
+@keyframes holoFloat2 {
+  0% { opacity: 0; transform: translateY(4px); }
+  40% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(-14px); }
+}
+
+/* 6. FRIENDLY WAVE GREETING */
+.activity-wave .mascot-arm-right {
+  transform-origin: 84px 72px;
+  animation: armWaveHand 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes armWaveHand {
+  0% { transform: rotate(70deg); }
+  100% { transform: rotate(105deg); }
+}
+
+/* 7. DANCE & GROOVE */
+.activity-dance .mascot-avatar-wrapper {
+  animation: danceGroove3D 0.55s ease-in-out infinite alternate;
+}
+
+.activity-dance .mascot-head-group {
+  animation: headBob3D 0.55s ease-in-out infinite alternate;
+}
+
+.activity-dance .mascot-arm-left {
+  animation: armDanceLeft 0.55s ease-in-out infinite alternate;
+}
+
+.activity-dance .mascot-arm-right {
+  animation: armDanceRight 0.55s ease-in-out infinite alternate;
+}
+
+@keyframes danceGroove3D {
+  0% { transform: translateY(0) rotate(-6deg); }
+  100% { transform: translateY(-8px) rotate(6deg); }
+}
+
+@keyframes headBob3D {
+  0% { transform: translateY(0) rotate(-5deg); }
+  100% { transform: translateY(-4px) rotate(5deg); }
+}
+
+@keyframes armDanceLeft {
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(-80deg); }
+}
+
+@keyframes armDanceRight {
+  0% { transform: rotate(80deg); }
+  100% { transform: rotate(25deg); }
+}
+
+/* 8. SLEEP / NAP MODE */
+.activity-sleep .mascot-avatar-wrapper {
+  animation: sleepBreathe 3.6s ease-in-out infinite;
+}
+
+.activity-sleep .head-sleep {
+  transform-origin: 60px 65px;
+  transform: rotate(14deg) translateY(3px);
+}
+
+.activity-sleep .mascot-ambient-glow {
+  opacity: 0.22;
+}
+
+@keyframes sleepBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.97) translateY(3px); }
+}
+
+/* 9. DRAG PHYSICS & LEGS DANGLING */
+.legs-dangling {
+  animation: legsDangleWiggle 0.4s ease-in-out infinite alternate;
+  transform-origin: 60px 98px;
+}
+
+@keyframes legsDangleWiggle {
+  0% { transform: rotate(-8deg); }
+  100% { transform: rotate(8deg); }
+}
+
+/* ========================================================
+   MINI CYBER-DRONE "BYTE" COMPANION
+   ======================================================== */
+.mascot-drone-unit {
+  cursor: pointer;
+  transform-origin: 106px 40px;
+  animation: byteHover 2.8s ease-in-out infinite alternate;
+  transition: transform var(--transition-fast);
+}
+
+.mascot-drone-unit:hover {
+  transform: scale(1.15);
+}
+
+.mascot-drone-unit.drone-spin {
+  animation: byteSpin 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes byteHover {
+  0% { transform: translateY(-2px) rotate(-3deg); }
+  100% { transform: translateY(5px) rotate(3deg); }
+}
+
+@keyframes byteSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.25) translateY(-10px); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ========================================================
+   PARTICLES & EXTRAS (Hearts, Speed Lines, ZZZ, Notes)
+   ======================================================== */
+
+/* Floating Hearts */
+.mascot-heart-particle {
+  position: absolute;
+  top: 10px;
+  left: 45%;
+  font-size: 1.4rem;
+  pointer-events: none;
+  animation: heartFloatUp 1.4s ease-out forwards;
+  z-index: 102;
+}
+
+@keyframes heartFloatUp {
+  0% { opacity: 1; transform: translate(0, 0) scale(0.6); }
+  50% { opacity: 0.95; transform: translate(12px, -35px) scale(1.3); }
+  100% { opacity: 0; transform: translate(-8px, -65px) scale(1); }
+}
+
+/* Speed Lines (during Run) */
+.mascot-speed-lines {
+  position: absolute;
+  top: 36%;
+  right: calc(100% + 6px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.speed-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-secondary));
+  border-radius: 9999px;
+  animation: speedLineMove 0.4s linear infinite;
+}
+
+.line-1 { width: 24px; animation-delay: 0.05s; }
+.line-2 { width: 36px; animation-delay: 0.15s; }
+.line-3 { width: 20px; animation-delay: 0.25s; }
+
+@keyframes speedLineMove {
+  0% { opacity: 0; transform: translateX(8px); }
+  50% { opacity: 0.95; }
+  100% { opacity: 0; transform: translateX(-18px); }
+}
+
+/* Sleep ZZZ */
+.mascot-sleep-particles {
+  position: absolute;
+  top: -14px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.mascot-sleep-particles .zzz {
+  position: absolute;
+  color: var(--accent-secondary);
+  font-weight: 700;
+  animation: zzzDrift 2.4s ease-out infinite;
+}
+
+.z1 { font-size: 0.75rem; animation-delay: 0.2s; }
+.z2 { font-size: 0.95rem; animation-delay: 0.9s; }
+.z3 { font-size: 1.15rem; animation-delay: 1.6s; }
+
+@keyframes zzzDrift {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  30% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(18px, -30px) scale(1.3); }
+}
+
+/* Music Notes */
+.mascot-music-notes {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.mascot-music-notes .note {
+  position: absolute;
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+  animation: noteFloat 1.8s ease-out infinite;
+}
+
+.note-1 { left: 8px; animation-delay: 0.1s; }
+.note-2 { right: 8px; animation-delay: 0.7s; color: var(--accent-secondary); }
+.note-3 { left: 40px; animation-delay: 1.3s; color: #f43f5e; }
+
+@keyframes noteFloat {
+  0% { opacity: 0; transform: translateY(0) scale(0.6); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-34px) rotate(16deg) scale(1.25); }
+}
+
+/* Coffee Steam */
+.mascot-coffee-steam {
+  position: absolute;
+  top: 38px;
+  right: 6px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.mascot-coffee-steam .steam {
+  position: absolute;
+  color: var(--accent-secondary);
+  font-size: 0.9rem;
+  animation: steamRise 1.4s ease-out infinite;
+}
+
+.steam-1 { animation-delay: 0.1s; }
+.steam-2 { animation-delay: 0.7s; right: -8px; }
+
+@keyframes steamRise {
+  0% { opacity: 0; transform: translateY(0) scale(0.6); }
+  40% { opacity: 0.85; }
+  100% { opacity: 0; transform: translateY(-22px) scale(1.1); }
+}
+
+/* ========================================================
+   ACTIVITY CONTROLLER TOOLBAR & SPEECH BUBBLE
+   ======================================================== */
+
+/* Activity Toolbar */
+.mascot-activity-toolbar {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 0;
+  width: 320px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(13, 18, 38, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-highlight);
+  box-shadow: var(--shadow-lg), 0 0 25px var(--accent-glow);
+  z-index: 105;
+  pointer-events: auto;
+  animation: bubblePopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.activity-toolbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.toolbar-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-subtle);
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.toolbar-close-btn:hover {
+  color: var(--text-bright);
+}
+
+.activity-buttons-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.activity-pill-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.activity-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-bright);
+  border-color: var(--border-highlight);
+  transform: translateY(-2px);
+}
+
+.activity-pill-btn.active {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.activity-pill-btn .act-icon {
+  font-size: 1.15rem;
+}
+
+.activity-pill-btn .act-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+}
+
+/* Quick Activity Controller Trigger Icon */
+.mascot-actions-trigger {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(14, 19, 36, 0.95);
+  border: 1px solid var(--border-highlight);
+  color: var(--text-bright);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.mascot-actions-trigger:hover {
+  transform: scale(1.15);
+  background: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* STATUS PILL WITH ACTIVITY TAG */
+.mascot-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: rgba(11, 16, 32, 0.92);
+  border: 1px solid var(--border-highlight);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.08em;
+  margin-top: -6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2;
+  pointer-events: auto;
+  transition: all var(--transition-fast);
+}
+
+.mascot-avatar-wrapper:hover .mascot-status-pill {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 12px var(--accent-cyan-glow);
+}
+
+.mascot-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.mascot-act-tag {
+  font-size: 0.6rem;
+  color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.15);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* MINIMIZE / SLEEP TOGGLE */
+.mascot-minimize-toggle {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(14, 19, 36, 0.95);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+}
+
+.digital-mascot-container:hover .mascot-minimize-toggle {
+  opacity: 1;
+}
+
+.mascot-minimize-toggle:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  transform: scale(1.15);
+}
+
+/* MINIMIZED MODE */
+.digital-mascot-container.minimized {
+  bottom: 22px;
+  left: 22px;
+}
+
+.digital-mascot-container.minimized .mascot-svg-box,
+.digital-mascot-container.minimized .mascot-status-pill,
+.digital-mascot-container.minimized .mascot-actions-trigger {
+  display: none;
+}
+
+.digital-mascot-container.minimized .mascot-avatar-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(13, 18, 38, 0.92);
+  border: 1.5px solid var(--accent-secondary);
+  box-shadow: 0 0 16px var(--accent-cyan-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digital-mascot-container.minimized .mascot-minimize-toggle {
+  position: static;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--accent-secondary);
+}
+
+/* INTERACTIVE SPEECH BUBBLE */
+.mascot-speech-bubble {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 0;
+  width: 300px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(13, 18, 38, 0.96);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--border-highlight);
+  box-shadow: var(--shadow-lg), 0 0 25px var(--accent-glow);
+  animation: bubblePopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.speech-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.speech-state-badge {
+  font-size: 0.64rem;
+  color: var(--accent-secondary);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.speech-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-subtle);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color var(--transition-fast);
+}
+
+.speech-close-btn:hover {
+  color: var(--text-bright);
+}
+
+.speech-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 14px;
+}
+
+.speech-speaker-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.speech-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.48;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.speech-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-glass);
+}
+
+.speech-action-btn {
+  font-size: 0.74rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--gradient-neon);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform var(--transition-fast);
+}
+
+.speech-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.speech-next-btn {
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.speech-next-btn:hover {
+  color: var(--text-bright);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-secondary);
+}
+
+.speech-bubble-tail {
+  position: absolute;
+  bottom: -7px;
+  left: 28px;
+  width: 12px;
+  height: 12px;
+  background: rgba(13, 18, 38, 0.96);
+  border-right: 1px solid var(--border-highlight);
+  border-bottom: 1px solid var(--border-highlight);
+  transform: rotate(45deg);
+}
+
+@keyframes bubblePopIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========================================================
+   MOBILE RESPONSIVENESS (< 768px)
+   ======================================================== */
+@media (max-width: 768px) {
+  .digital-mascot-container {
+    bottom: 16px;
+    left: 14px;
+  }
+
+  .mascot-svg-box {
+    width: 76px;
+    height: 104px;
+  }
+
+  .mascot-status-pill {
+    font-size: 0.62rem;
+    padding: 2px 8px;
+  }
+
+  .mascot-actions-trigger,
+  .mascot-minimize-toggle {
+    opacity: 0.88;
+    width: 24px;
+    height: 24px;
+  }
+
+  .mascot-speech-bubble,
+  .mascot-activity-toolbar {
+    width: min(290px, calc(100vw - 32px));
+    left: 0;
+    bottom: calc(100% + 10px);
+    padding: 12px 14px;
+  }
+
+  .speech-text {
+    font-size: 0.82rem;
+  }
+}
+
+
+

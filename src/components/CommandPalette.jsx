@@ -88,6 +88,15 @@ export default function CommandPalette({
       }
     },
     {
+      id: 'act-mascot-companion',
+      category: 'Assistant',
+      title: 'Talk to Tobi Mascot Companion',
+      icon: '🤖',
+      action: () => {
+        window.dispatchEvent(new CustomEvent('toggle-mascot-dialogue'));
+      }
+    },
+    {
       id: 'act-toggle-sound',
       category: 'Preferences',
       title: isMuted ? 'Unmute Sound Effects' : 'Mute UI Sound Effects',
