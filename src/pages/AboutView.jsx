@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Card3DTilt from '../components/Card3DTilt';
+import LoadingButton from '../components/LoadingButton';
 import { portfolioImages } from '../assets/images';
 import { soundManager } from '../utils/audio';
 
@@ -72,14 +73,17 @@ export default function AboutView({ personal, currentVibe, faq, onNavigate }) {
           <div className="synth-vibe-widget glass-panel">
             <div className="synth-header">
               <span className="badge badge-cyan font-mono">NOW VIBING</span>
-              <button
-                className={`synth-trigger-btn ${isPlayingSynth ? 'playing' : ''}`}
+              <LoadingButton
+                variant="secondary"
+                className={`synth-trigger-btn font-mono ${isPlayingSynth ? 'playing' : ''}`}
                 onClick={playSynthesizerVibe}
-                onMouseEnter={() => soundManager.playHover()}
+                isLoading={isPlayingSynth}
+                loadingText="Streaming Chime..."
+                spinnerType="dots"
                 title="Play Audio Chime"
               >
-                {isPlayingSynth ? '▶ Chime Active' : '♫ Play Synth Tone'}
-              </button>
+                <span>♫ Play Synth Tone</span>
+              </LoadingButton>
             </div>
 
             <div className="synth-visualizer-bars">

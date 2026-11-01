@@ -23,11 +23,8 @@ export default function Navbar({
   }, []);
 
   const handleNavClick = (pageId) => {
-    soundManager.playClick();
-    setActivePage(pageId);
     setMobileMenuOpen(false);
-    window.location.hash = pageId;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActivePage(pageId);
   };
 
   const toggleSound = () => {

@@ -13,7 +13,8 @@ export default function CommandPalette({
   currentTheme,
   isMuted,
   toggleSound,
-  onNotify
+  onNotify,
+  onTriggerBootloader
 }) {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -94,6 +95,37 @@ export default function CommandPalette({
       icon: '🤖',
       action: () => {
         window.dispatchEvent(new CustomEvent('toggle-mascot-dialogue'));
+      }
+    },
+    {
+      id: 'act-trigger-bootloader',
+      category: 'Loaders & Diagnostics',
+      title: 'Full-Screen Loader: Initial System Boot Sequence',
+      icon: '⚡',
+      action: () => {
+        onClose();
+        onTriggerBootloader?.('boot');
+      }
+    },
+    {
+      id: 'act-trigger-transition',
+      category: 'Loaders & Diagnostics',
+      title: 'Full-Screen Loader: Quantum Page Transition',
+      icon: '🌀',
+      action: () => {
+        onClose();
+        onTriggerBootloader?.('transition');
+      }
+    },
+    {
+      id: 'act-test-button-loader',
+      category: 'Loaders & Diagnostics',
+      title: 'Button Loader: Test Resume Compilation State',
+      icon: '🔘',
+      action: () => {
+        onClose();
+        onNavigate('experience');
+        onNotify?.('Navigated to Experience! Click "Download Resume (PDF)" to see the kinetic button loader in action 📄⚡');
       }
     },
     {

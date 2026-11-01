@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Card3DTilt from '../components/Card3DTilt';
+import LoadingButton from '../components/LoadingButton';
 import { soundManager } from '../utils/audio';
 
 export default function ContactView({ personal, onNotify }) {
@@ -312,22 +313,18 @@ export default function ContactView({ personal, onNotify }) {
                   />
                 </div>
 
-                {/* Submit button */}
-                <button
+                {/* Submit button with cyber kinetic loading animation */}
+                <LoadingButton
                   type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="btn btn-primary form-submit-btn"
-                  onMouseEnter={() => soundManager.playHover()}
+                  variant="primary"
+                  className="form-submit-btn font-mono"
+                  isLoading={formStatus === 'sending'}
+                  loadingText={`Routing Transmission to ${personal.email}...`}
+                  spinnerType="spinner"
                 >
-                  {formStatus === 'sending' ? (
-                    <span>Routing Transmission to {personal.email}...</span>
-                  ) : (
-                    <>
-                      <span>Transmit Message to {personal.name}</span>
-                      <span>⚡</span>
-                    </>
-                  )}
-                </button>
+                  <span>Transmit Message to {personal.name}</span>
+                  <span>⚡</span>
+                </LoadingButton>
 
                 <div className="direct-mailto-hint font-mono">
                   <span>Delivers directly to: <strong className="text-gradient-neon">{personal.email}</strong></span>

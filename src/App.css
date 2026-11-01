@@ -4128,5 +4128,406 @@
   }
 }
 
+/* ==========================================================================
+   13. FULLSCREEN LOADING ANIMATION (REACTOR BOOTLOADER)
+   ========================================================================== */
 
+.fullscreen-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(6, 9, 18, 0.94);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 40px;
+  overflow: hidden;
+  user-select: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
+.fullscreen-loader-overlay.fade-out {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+/* Ambient cyber glow mesh */
+.loader-ambient-mesh {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 45%, var(--accent-glow) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* CRT / Cyber Scanlines */
+.loader-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.18) 0px,
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Header Telemetry */
+.loader-telemetry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  color: var(--text-subtle);
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 16px;
+  z-index: 2;
+}
+
+.telemetry-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Central Reactor Box */
+.loader-reactor-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  margin: auto 0;
+  max-width: 620px;
+  width: 100%;
+  align-self: center;
+}
+
+.loader-hud-rings-wrap {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin-bottom: 28px;
+}
+
+.loader-hud-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Ring animations */
+.ring-outer {
+  animation: hudSpinClockwise 12s linear infinite;
+  transform-origin: 100px 100px;
+}
+
+.ring-middle {
+  animation: hudSpinCounter 7s linear infinite;
+  transform-origin: 100px 100px;
+}
+
+.ring-inner {
+  animation: hudSpinClockwise 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: 100px 100px;
+}
+
+.ring-hexagon {
+  animation: hudHexagonPulse 2.4s ease-in-out infinite alternate;
+  transform-origin: 100px 100px;
+}
+
+@keyframes hudSpinClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hudSpinCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes hudHexagonPulse {
+  0% { transform: scale(0.96); opacity: 0.4; }
+  100% { transform: scale(1.04); opacity: 0.85; }
+}
+
+/* Core Monogram */
+.loader-core-monogram {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-initials {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.core-subtag {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-secondary);
+  margin-top: -2px;
+}
+
+/* Meta Labels */
+.loader-meta-group {
+  margin-bottom: 32px;
+}
+
+.loader-system-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+}
+
+.loader-system-subtitle {
+  font-size: 0.74rem;
+  color: var(--text-subtle);
+  letter-spacing: 0.16em;
+}
+
+/* Progress Track */
+.loader-progress-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loader-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.loader-log-text {
+  color: var(--accent-secondary);
+  font-size: 0.72rem;
+}
+
+.loader-percentage-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.loader-progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  border-radius: 9999px;
+  overflow: visible;
+  position: relative;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  background: var(--gradient-neon);
+  border-radius: 9999px;
+  position: relative;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.loader-progress-glow-head {
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 12px var(--accent-secondary);
+}
+
+/* Footer Bypass */
+.loader-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  border-top: 1px solid var(--border-glass);
+  padding-top: 16px;
+  z-index: 2;
+}
+
+.loader-skip-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.loader-skip-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-bright);
+  border-color: var(--border-highlight);
+}
+
+/* ==========================================================================
+   14. BUTTON LOADING ANIMATIONS (SPINNER, DOTS, RADAR, SHIMMER)
+   ========================================================================== */
+
+.loading-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.loading-btn.is-loading {
+  cursor: wait !important;
+  pointer-events: none;
+  filter: brightness(1.08);
+}
+
+.loading-btn .btn-content-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.loading-btn .btn-loader-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 1. Cyber Kinetic Dual-Ring Spinner */
+.btn-cyber-spinner {
+  width: 18px;
+  height: 18px;
+  animation: btnSpinnerRotate 0.75s linear infinite;
+  overflow: visible;
+}
+
+.btn-cyber-spinner .spinner-track {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.btn-cyber-spinner .spinner-head {
+  stroke: var(--accent-secondary);
+  filter: drop-shadow(0 0 6px var(--accent-secondary));
+}
+
+@keyframes btnSpinnerRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. Cyber Pulse Matrix Dots */
+.btn-pulse-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+}
+
+.btn-pulse-dots .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 1.5px;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 6px var(--accent-secondary);
+  animation: btnDotPulse 0.9s ease-in-out infinite alternate;
+}
+
+.btn-pulse-dots .dot-1 { animation-delay: 0s; }
+.btn-pulse-dots .dot-2 { animation-delay: 0.22s; }
+.btn-pulse-dots .dot-3 { animation-delay: 0.44s; }
+
+@keyframes btnDotPulse {
+  0% { transform: scale(0.6); opacity: 0.35; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+/* 3. Expanding Concentric Neon Radar Wave */
+.btn-radar-wave {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.btn-radar-wave .radar-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.8px solid var(--accent-secondary);
+  animation: btnRadarExpand 1.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.btn-radar-wave .circle-2 {
+  animation-delay: 0.5s;
+}
+
+@keyframes btnRadarExpand {
+  0% { transform: scale(0.2); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* 4. Scanning Laser Bottom Shimmer Bar */
+.btn-progress-shimmer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, var(--accent-secondary), #ffffff, var(--accent-primary), transparent);
+  background-size: 200% 100%;
+  animation: btnShimmerSweep 1.1s linear infinite;
+  box-shadow: 0 0 10px var(--accent-secondary);
+}
+
+@keyframes btnShimmerSweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (max-width: 640px) {
+  .fullscreen-loader-overlay {
+    padding: 24px 20px;
+  }
+  .loader-telemetry-header {
+    font-size: 0.68rem;
+  }
+  .loader-system-title {
+    font-size: 1.2rem;
+  }
+  .loader-hud-rings-wrap {
+    width: 150px;
+    height: 150px;
+  }
+}

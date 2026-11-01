@@ -8,6 +8,7 @@ import ProjectModal from './components/ProjectModal';
 import CommandPalette from './components/CommandPalette';
 import BackToTop from './components/BackToTop';
 import DigitalMascot from './components/DigitalMascot';
+import FullScreenLoader from './components/FullScreenLoader';
 import { soundManager } from './utils/audio';
 
 // Pages
@@ -37,6 +38,7 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [toasts, setToasts] = useState([]);
   const [isMuted, setIsMuted] = useState(soundManager.getIsMuted());
+  const [isBooting, setIsBooting] = useState(true);
 
   // Show interactive glass toast notification
   const showToast = useCallback((message, type = 'info') => {
@@ -99,11 +101,37 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // Update URL hash when page changes
+  const [pageTransition, setPageTransition] = useState(null);
+
+  // Update URL hash when page changes with quantum full-screen loading transition
   const navigateTo = (pageId) => {
-    setActivePage(pageId);
-    window.location.hash = pageId;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (pageId === activePage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    soundManager.playClick();
+
+    const routeMeta = {
+      home: { title: "SYSTEM OVERVIEW", subtitle: "ROUTING TO CORE ARCHITECTURE..." },
+      projects: { title: "PRODUCTION SYSTEMS", subtitle: "FETCHING REPOSITORY CASE STUDIES..." },
+      skills: { title: "CAPABILITIES & STACK", subtitle: "COMPILING SKILL MATRIX & TOOLS..." },
+      experience: { title: "TIMELINE & CHRONOLOGY", subtitle: "SYNCING PRODUCTION MILESTONES..." },
+      about: { title: "ORIGIN & PHILOSOPHY", subtitle: "LOADING PROFILE METRICS..." },
+      contact: { title: "COLLABORATION INBOX", subtitle: "ESTABLISHING ENCRYPTED TRANSMISSION..." }
+    };
+
+    setPageTransition(routeMeta[pageId] || { title: pageId.toUpperCase(), subtitle: "LOADING MODULE..." });
+
+    setTimeout(() => {
+      setActivePage(pageId);
+      window.location.hash = pageId;
+      window.scrollTo({ top: 0 });
+    }, 240);
+
+    setTimeout(() => {
+      setPageTransition(null);
+    }, 550);
   };
 
   return (
@@ -224,6 +252,14 @@ function App() {
         isMuted={isMuted}
         toggleSound={toggleSound}
         onNotify={showToast}
+        onTriggerBootloader={(mode) => {
+          if (mode === 'transition') {
+            setPageTransition({ title: "QUANTUM DIAGNOSTICS", subtitle: "RUNNING 2.5D SHADER PIPELINE..." });
+            setTimeout(() => setPageTransition(null), 550);
+          } else {
+            setIsBooting(true);
+          }
+        }}
       />
 
       {/* Interactive Project Case Study Modal */}
@@ -244,6 +280,22 @@ function App() {
             </div>
           ))}
         </div>
+      )}
+
+      {/* Type 1: 2.5D Full-Screen Sci-Fi Bootloader & Quantum Route Transitions */}
+      {(isBooting || pageTransition) && (
+        <FullScreenLoader
+          key={isBooting ? 'boot' : pageTransition?.title}
+          isLoading={Boolean(isBooting || pageTransition)}
+          mode={isBooting ? 'boot' : 'transition'}
+          duration={isBooting ? 1400 : 500}
+          title={pageTransition?.title || "OLUWATOBILOBA OHIOLE WILLIAMS"}
+          subtitle={pageTransition?.subtitle || "DISTRIBUTED SYSTEMS // SENSORY WEB ARCHITECTURE"}
+          onComplete={() => {
+            if (isBooting) setIsBooting(false);
+            if (pageTransition) setPageTransition(null);
+          }}
+        />
       )}
     </>
   );

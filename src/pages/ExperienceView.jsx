@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Card3DTilt from '../components/Card3DTilt';
+import LoadingButton from '../components/LoadingButton';
 import { soundManager } from '../utils/audio';
 import { downloadResumePdf, previewResumePdf } from '../utils/pdfResumeBuilder';
 import defaultPortfolioData from '../data/portfolioData.json';
@@ -15,19 +16,22 @@ export default function ExperienceView({
   const activeData = portfolioData || defaultPortfolioData;
 
   const handleDownloadResume = () => {
-    soundManager.playSuccess();
+    soundManager.playClick();
     setIsGenerating(true);
 
-    try {
-      const fileName = `${activeData?.personal?.name?.replace(/\s+/g, '_') || 'Oluwatobiloba_Williams'}_Resume.pdf`;
-      downloadResumePdf(activeData, fileName);
-      onNotify?.(`Compiled & downloaded ${fileName}! 📄✨`);
-    } catch (err) {
-      console.error('Failed to generate PDF:', err);
-      onNotify?.('Error generating PDF resume. Please try again.');
-    } finally {
-      setTimeout(() => setIsGenerating(false), 900);
-    }
+    setTimeout(() => {
+      try {
+        const fileName = `${activeData?.personal?.name?.replace(/\s+/g, '_') || 'Oluwatobiloba_Williams'}_Resume.pdf`;
+        downloadResumePdf(activeData, fileName);
+        soundManager.playSuccess();
+        onNotify?.(`Compiled & downloaded ${fileName}! 📄✨`);
+      } catch (err) {
+        console.error('Failed to generate PDF:', err);
+        onNotify?.('Error generating PDF resume. Please try again.');
+      } finally {
+        setIsGenerating(false);
+      }
+    }, 1500);
   };
 
   const handlePreviewResume = () => {
@@ -71,25 +75,18 @@ export default function ExperienceView({
             <span>Preview PDF</span>
             <span>↗</span>
           </button>
-          <button
-            className="btn btn-primary resume-dl-btn font-mono"
+          <LoadingButton
+            variant="primary"
+            className="resume-dl-btn font-mono"
             onClick={handleDownloadResume}
-            disabled={isGenerating}
-            onMouseEnter={() => soundManager.playHover()}
+            isLoading={isGenerating}
+            loadingText="Compiling Vector PDF..."
+            spinnerType="spinner"
             title="Build and download official vector PDF resume"
           >
-            {isGenerating ? (
-              <>
-                <span className="btn-spinner" />
-                <span>Building PDF...</span>
-              </>
-            ) : (
-              <>
-                <span>Download Resume (PDF)</span>
-                <span>↓</span>
-              </>
-            )}
-          </button>
+            <span>Download Resume (PDF)</span>
+            <span>↓</span>
+          </LoadingButton>
         </div>
       </div>
 

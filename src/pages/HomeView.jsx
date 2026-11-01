@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card3DTilt from '../components/Card3DTilt';
+import LoadingButton from '../components/LoadingButton';
 import { portfolioImages } from '../assets/images';
 import { soundManager } from '../utils/audio';
 
@@ -10,6 +11,7 @@ export default function HomeView({ data, onNavigate, onSelectProject }) {
 
   // Animated counter effect for stats
   const [tickerCounts, setTickerCounts] = useState(stats.map(() => 0));
+  const [loadingTarget, setLoadingTarget] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,41 +42,52 @@ export default function HomeView({ data, onNavigate, onSelectProject }) {
               Hello, I'm <strong className="hero-highlight">{personal.name}</strong> — {personal.title}. {personal.tagline}
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons with Interactive Loading Animations */}
             <div className="hero-cta-group">
-              <button
-                className="btn btn-primary"
+              <LoadingButton
+                variant="primary"
+                isLoading={loadingTarget === 'projects'}
+                loadingText="Mounting Systems..."
+                spinnerType="spinner"
                 onClick={() => {
-                  soundManager.playClick();
+                  setLoadingTarget('projects');
                   onNavigate('projects');
+                  setTimeout(() => setLoadingTarget(null), 600);
                 }}
-                onMouseEnter={() => soundManager.playHover()}
               >
                 <span>Explore Works</span>
                 <span>→</span>
-              </button>
+              </LoadingButton>
 
-              <button
-                className="btn btn-secondary"
+              <LoadingButton
+                variant="secondary"
+                isLoading={loadingTarget === 'contact'}
+                loadingText="Connecting..."
+                spinnerType="radar"
                 onClick={() => {
-                  soundManager.playClick();
+                  setLoadingTarget('contact');
                   onNavigate('contact');
+                  setTimeout(() => setLoadingTarget(null), 600);
                 }}
-                onMouseEnter={() => soundManager.playHover()}
               >
                 <span>Initiate Contact</span>
-              </button>
+                <span>⚡</span>
+              </LoadingButton>
 
-              <button
-                className="btn btn-ghost font-mono"
+              <LoadingButton
+                variant="ghost"
+                className="font-mono"
+                isLoading={loadingTarget === 'experience'}
+                loadingText="Loading Bio..."
+                spinnerType="dots"
                 onClick={() => {
-                  soundManager.playClick();
+                  setLoadingTarget('experience');
                   onNavigate('experience');
+                  setTimeout(() => setLoadingTarget(null), 600);
                 }}
-                onMouseEnter={() => soundManager.playHover()}
               >
                 <span>Resume / Bio ↓</span>
-              </button>
+              </LoadingButton>
             </div>
 
             {/* Current Vibe Bar */}
