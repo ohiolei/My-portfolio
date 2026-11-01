@@ -186,7 +186,7 @@
       "featured": true,
       "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1727868075/Screenshot_2024-10-02_121714_u8g9mv.png",
       "githubUrl": "",
-      "liveUrl": "https://v4.tasued.edu.ng/login",
+      "liveUrl": "https://my.tasued.edu.ng/login",
       "year": "2024",
       "metrics": {
         "students": "30,000+ Registered Users",
@@ -213,7 +213,7 @@
       "featured": true,
       "thumbnail": "https://res.cloudinary.com/dmuwbftg2/image/upload/v1727868244/Screenshot_2024-10-02_122319_dmlobx.png",
       "githubUrl": "",
-      "liveUrl": "https://my.tasued.edu.ng/core/auth/index.php",
+      "liveUrl": "https://v3.tasued.edu.ng/core/auth/index.php",
       "year": "2023",
       "metrics": {
         "records": "100k+ Archived Transcripts",
