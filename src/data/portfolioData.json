@@ -412,6 +412,12 @@
     }
   ],
   "education": [
+      {
+      "degree": "M.Sc., Computer Science",
+      "institution": "Tai Solarin Federal University of Education",
+      "period": "Sep 2023 — Mar 2026",
+      "notes": "Master of Science in Computer Science • In-depth focus on Systems Programming, Database Systems, Web Architectures, and Algorithm Design"
+    },
     {
       "degree": "B.Sc., Computer Science",
       "institution": "Olabisi Onabanjo University, Nigeria",
